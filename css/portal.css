@@ -1,0 +1,281 @@
+body {
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+    /* background-color: rgb(245, 245, 245) !important; */
+    background-image: url(../images/hands_red.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation-duration: 1.5s;
+    transition-timing-function: ease-in;
+    animation-name: fadeIn;
+}
+
+nav.navbar {
+    padding: 10px;
+    height: 10vh;
+    background-color: rgb(255, 255, 255) !important;
+    position: relative;
+}
+
+.navbar-brand img {
+    height: 50px;
+    width: auto;
+}
+
+.img-perfil {
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    border-radius: 100%;
+    padding: 0!important;
+    transition: 0.4s all;
+}
+
+.img-perfil:hover {
+    box-shadow: 0px 5px 15px #0000001e;
+    transition: 0.2s ease-in-out;
+    transform: scale(1.05);
+}
+
+.img-perfil img {
+    height: 100%;
+}
+
+.dropdown-menu {
+    left: auto !important;
+}
+
+.title-bemvindo {
+    font-size: 34px;
+    color: rgb(255, 255, 255);
+}
+
+.title-bemvindo-name {
+    font-size: 55px;
+    margin-top: -15px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+
+.sides {
+    height: 65vh;
+}
+
+.social-media {
+    background: rgb(255, 255, 255);
+    width: 100%;
+    height: 20vh;
+    margin: 5rem auto;
+    display: grid;
+    grid-template-columns: 10fr 3fr 1fr 1fr 1fr;
+    padding: 3rem 0 3rem 3rem;
+}
+
+.btn-solicitar {
+    text-align: center;
+    box-shadow: 0px 10px 14px -7px #4b4b4ba9;
+    background: linear-gradient(to bottom, #ffffff 5%, #f1f1f1 100%);
+    background-color: #fff;
+    border-radius: 5rem;
+    display: inline-block;
+    cursor: pointer;
+    color: #b10f28;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 1rem 3.5rem;
+    text-decoration: none !important;
+    text-shadow: 0px 1px 0px #f3f3f37c;
+    transition: 0.25s ease-in-out;
+}
+
+.btn-solicitar:hover {
+    color: #b10f28;
+    box-shadow: 0px 7px 10px -7px #4b4b4b9a;
+    transform: translateY(-1px);
+}
+
+.modal-footer a {
+    text-align: center;
+    box-shadow: 0px 10px 14px -7px #276873;
+    background: linear-gradient(to bottom, var(--light-red) 5%, var(--main-red) 100%);
+    background-color: #599bb3;
+    border-radius: 5rem;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0.3rem 2.5rem;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
+}
+
+.modal-footer a:hover {
+    background: linear-gradient(to bottom, var(--main-red) 5%, var(--light-red) 100%);
+    color: #fff;
+}
+
+.btn-fechar {
+    background: linear-gradient(to bottom, #b8b8b8 5%, #8a8a8a 100%) !important;
+}
+
+
+/* .form-group input {
+    padding: 0.5rem;
+    border-bottom: 2px solid rgb(134, 134, 134);
+    transition: 0.5s ease-in-out;
+}
+
+.form-group input:focus {
+    padding: 0.5rem;
+    border: 2px solid rgb(134, 134, 134);
+    border-radius: 5rem;
+} */
+
+.box-historico {
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.titulo-historico {
+    font-size: 25px;
+    color: rgb(98, 98, 98);
+    font-weight: 500;
+}
+
+.muck-up {
+    min-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.muck-up .bottom {
+    min-height: 303px;
+    z-index: 1;
+    padding: 35px;
+    position: relative;
+    color: #222;
+    padding-top: 0px;
+}
+
+.bottom:after {
+    content: '';
+    position: absolute;
+    top: -46px;
+    left: -22px;
+    right: 0;
+    height: 100px;
+    transform: rotate(10deg);
+    width: 337px;
+    z-index: -1;
+}
+
+.bottom .title {
+    margin-bottom: 20px;
+}
+
+.bottom .title h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.title small {
+    font-size: 10px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+ul.tasks .task-title {
+    font-size: 18px;
+    display: inline-block;
+    font-weight: 400;
+    color: rgb(49, 49, 49);
+}
+
+ul.tasks .task-time {
+    float: right;
+    font-size: 13px;
+    color: #888;
+}
+
+ul.tasks .task-cat {
+    font-size: 14px;
+    display: block;
+    color: #888;
+}
+
+ul.tasks li {
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 8;
+}
+
+ul.tasks li:after {
+    content: '';
+    position: absolute;
+    left: -18px;
+    top: 8px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+
+ul.tasks li.green:after {
+    animation: tasks;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes tasks {
+    0% {
+        background: #b1ffc4;
+    }
+    50% {
+        background: #0de242;
+    }
+    100% {
+        background: #b1ffc4;
+    }
+}
+
+ul.tasks li.historico:after {
+    background: #383838;
+}
+
+ul.tasks::after {
+    content: '';
+    position: absolute;
+    height: 400px;
+    width: 1px;
+    background: #eee;
+    left: 20px;
+    top: -68px;
+}
+
+ul li.hang {
+    margin-bottom: 48px;
+}
+
+ul li.hang img {
+    float: left;
+    height: 20ox;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+@media (max-width: 1100px) {
+    .muck-up .bottom {
+        max-height: 20vh;
+        overflow: hidden;
+    }
+    .sides {
+        margin-top: 8rem;
+    }
+}

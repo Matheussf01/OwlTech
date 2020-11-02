@@ -1,0 +1,269 @@
+body {
+    /* background-color: rgb(245, 245, 245) !important; */
+    background-image: url(../images/ajuda_back.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav.navbar {
+    padding: 10px;
+    height: 10vh;
+    background-color: rgb(255, 255, 255) !important;
+    position: relative;
+}
+
+.navbar-brand img {
+    height: 50px;
+    width: auto;
+}
+
+.itens-menu a {
+    padding: 10px;
+    text-decoration: none;
+    color: #383838;
+}
+
+.img-perfil {
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    border-radius: 100%;
+    padding: 0!important;
+    transition: 0.4s all;
+}
+
+.img-perfil:hover {
+    box-shadow: 0px 5px 15px #0000001e;
+    height: 62px;
+    width: 62px;
+}
+
+.img-perfil img {
+    height: 100%;
+}
+
+.dropdown-menu {
+    left: auto !important;
+}
+
+.title-bemvindo {
+    font-size: 34px;
+    color: rgb(255, 255, 255);
+}
+
+.title-bemvindo-name {
+    font-size: 55px;
+    margin-top: -15px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+
+.sides {
+    height: 65vh;
+}
+
+.social-media {
+    background: rgb(255, 255, 255);
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    bottom: 0;
+}
+
+.btn-solicitar {
+    text-align: center;
+    box-shadow: 0px 4px 7px -7px #4b4b4ba9;
+    background: linear-gradient(to bottom, #b10f28 5%, #a0081f 100%);
+    background-color: #fff;
+    border-radius: 5rem;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0.7rem 1.5rem;
+    text-decoration: none !important;
+    text-shadow: 0px 1px 0px #f3f3f37c;
+    transition: 0.25s ease-in-out;
+}
+
+.btn-solicitar:hover {
+    color: #ffffff;
+}
+
+.btn-fechar {
+    background: linear-gradient(to bottom, #b8b8b8 5%, #8a8a8a 100%) !important;
+}
+
+.box-historico {
+    background-color: #ffffff;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.titulo-historico {
+    font-size: 25px;
+    color: rgb(98, 98, 98);
+    font-weight: 500;
+}
+
+.muck-up {
+    min-width: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.muck-up .bottom {
+    min-height: 303px;
+    z-index: 1;
+    padding: 35px;
+    position: relative;
+    color: #222;
+    padding: 0px 20px;
+}
+
+.modal-footer a {
+    text-align: center;
+    box-shadow: 0px 10px 14px -7px #276873;
+    background: linear-gradient(to bottom, var(--light-red) 5%, var(--main-red) 100%);
+    background-color: #599bb3;
+    border-radius: 5rem;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0.3rem 2.5rem;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #3d768a;
+}
+
+.modal-footer a:hover {
+    background: linear-gradient(to bottom, var(--main-red) 5%, var(--light-red) 100%);
+    color: #fff;
+}
+
+.bottom:after {
+    content: '';
+    position: absolute;
+    top: -46px;
+    left: -22px;
+    right: 0;
+    height: 100px;
+    transform: rotate(10deg);
+    width: 337px;
+    z-index: -1;
+}
+
+.bottom .title {
+    margin-bottom: 20px;
+}
+
+.bottom .title h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.title small {
+    font-size: 10px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tasks-box-conteudo {
+    margin: 10px;
+}
+
+ul.tasks-colaborador .task-title {
+    font-size: 18px;
+    display: inline-block;
+    font-weight: 400;
+    color: rgb(49, 49, 49);
+}
+
+ul.tasks-colaborador .task-time {
+    float: right;
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    margin-top: 5px;
+    margin-left: 75px;
+    border-radius: 5px;
+}
+
+ul.tasks-colaborador .task-cat {
+    font-size: 14px;
+    display: block;
+    color: #888;
+}
+
+ul.tasks-colaborador li {
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 8;
+}
+
+ul.task-colaboradors li:after {
+    content: '';
+    position: absolute;
+    left: -18px;
+    top: 8px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+}
+
+ul.task-colaboradors li.green:after {
+    animation: tasks;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes tasks {
+    0% {
+        background: #b1ffc4;
+    }
+    50% {
+        background: #0de242;
+    }
+    100% {
+        background: #b1ffc4;
+    }
+}
+
+
+
+ul li.hang {
+    margin-bottom: 48px;
+}
+
+ul li.hang img {
+    float: left;
+    height: 20ox;
+    width: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.img-perfil-tasks {
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+    border-radius: 100%;
+    padding: 0!important;
+    transition: 0.4s all;
+}
+
+.img-perfil-tasks img {
+    height: 100%;
+}
+
+@media (max-width: 1100px) {
+    .muck-up .bottom {
+        max-height: 20vh;
+        overflow: hidden;
+    }
+}
