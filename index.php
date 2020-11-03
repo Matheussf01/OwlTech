@@ -1,3 +1,8 @@
+<?php
+    session_start(); 
+    include("connect.php");
+    session_destroy();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/home.css">
-    <title>Document</title>
+    <title>OwlBillity</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -28,7 +33,7 @@
     <form action="loginCadastro.php" method="POST" class="login">
         <div class="inputs-login">
             <div class="field">
-                <p>ID:</p>
+                <p>Registro:</p>
                 <input type="text" name="id">
             </div>
 
@@ -37,9 +42,14 @@
                 <input type="password"  name="senha">
             </div>
 
-            <div class="field email">
+            <div class="field nome">
                 <p>Nome</p>
                 <input type="text" name="nome">
+            </div>
+
+            <div class="field email">
+                <p>E-mail</p>
+                <input type="email" name="email">
             </div>
 
             <div class="field question">
@@ -48,7 +58,6 @@
                     <option value="">Não</option>
                     <option value="Visual">Visual</option>
                 </select>
-               
             </div>
 
         </div>

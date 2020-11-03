@@ -3,15 +3,14 @@
     include("connect.php");
 
   
-
-    if((empty($_SESSION['id'])))
+    if( empty($_SESSION['id']) || $_SESSION['deficiencia'] == 0)
     {
         /*verifica se existem as informações*/
         session_destroy();
         header('location:index.php');
     }
     else
-    {
+    { 
 
         $uri = $_SERVER["REQUEST_URI"];
         $uriArray = explode("/",$uri);
@@ -60,7 +59,7 @@
                    
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#perfilModal">Perfil</a>
+                    <a class="dropdown-item" id="editPerfil" href="#" data-toggle="modal" data-target="#perfilModal">Perfil</a>
                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#faleConoscoModal">Fale Conosco</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="sair.php">Sair</a>

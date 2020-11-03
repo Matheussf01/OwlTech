@@ -4,14 +4,22 @@
 
   
 
+<<<<<<< HEAD
     if((empty($_SESSION['id'])))
+=======
+    if( empty($_SESSION['id']) || $_SESSION['deficiencia'] == 1)
+>>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
     {
         /*verifica se existem as informações*/
         session_destroy();
         header('location:index.php');
     }
     else
+<<<<<<< HEAD
     {
+=======
+    { 
+>>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
 
         $uri = $_SERVER["REQUEST_URI"];
         $uriArray = explode("/",$uri);
@@ -42,13 +50,18 @@
 <body>
 
     <nav class="navbar navbar-expand-lg  d-flex justify-content-around">
+<<<<<<< HEAD
         <a class="navbar-brand" href="index.php">
+=======
+        <a class="navbar-brand" href="index.html">
+>>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
             <img src="images/owlbility.png" alt="logo Dow">
         </a>
 
 
         <div>
             <a class="nav-link  img-perfil d-flex align-items-center justify-content-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<<<<<<< HEAD
             <?php 
                     if(!empty($usuario_info['foto_perfil']))
                         {
@@ -59,6 +72,11 @@
                             echo(' <img src="images/persona.jpg">');
                         }
                     ?>
+=======
+                <?php 
+                    echo('<img src="'.$usuario_info['foto_perfil'].'">');
+                ?>
+>>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#perfilModal">Perfil</a>
@@ -127,7 +145,11 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
     <!-- <div class="social-media d-flex align-items-center ">
+=======
+    <div class="social-media d-flex align-items-center ">
+>>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
         <div class="container">
             <div class="row d-flex justify-content-end">
                 <p class="mr-3">Siga nossas redes sociais</p>
@@ -138,7 +160,11 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
     </div> -->
+=======
+    </div>
+>>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
 
     <!-- ================================ -->
     <!-- MODAL AREA -->
@@ -153,6 +179,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Perfil</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<<<<<<< HEAD
           <span aria-hidden="true">&times;</span>
         </button>
                 </div>
@@ -198,6 +225,13 @@
                             </div>
                         </form>
                     </div>
+=======
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+>>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
                 </div>
                 <div class="modal-footer">
                     <a href="portal-Beneficiado.html" data-dismiss="modal">Close</a>
@@ -207,6 +241,10 @@
         </div>
     </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
     <!-- MODAL FALE CONOSCO -->
     <div class="modal fade" id="faleConoscoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

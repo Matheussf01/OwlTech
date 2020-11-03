@@ -1,6 +1,10 @@
 const login = document.querySelector('.login');
 const btn_login = document.querySelector('.button-login');
 const email = document.querySelector('.email');
+<<<<<<< HEAD
+=======
+const nome = document.querySelector('.nome');
+>>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
 const question = document.querySelector('.question');
 const social_media = document.querySelector('.social-media');
 const botaoLogin = document.querySelector('#login')
@@ -22,6 +26,10 @@ x.addListener(myFunction)
 function cadastrar() {
     if (x.matches) {
         email.style.display = "block"
+<<<<<<< HEAD
+=======
+        nome.style.display = "block"
+>>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
         question.style.display = "block"
         botaoLogin.style.display = "none";
         register.style.display = "none";
@@ -31,6 +39,10 @@ function cadastrar() {
         login.style.margin = "-15rem auto";
         btn_login.style.top = "5rem"
         email.style.display = "block"
+<<<<<<< HEAD
+=======
+        nome.style.display = "block"
+>>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
         question.style.display = "block"
 
         social_media.style.margin = "15rem auto"
@@ -61,6 +73,10 @@ function myFunction(x) {
         register.style.display = "inline-block";
         registered.style.display = "none";
         email.style.display = "none"
+<<<<<<< HEAD
+=======
+        nome.style.display = "none"
+>>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
         question.style.display = "none"
     }
 }
