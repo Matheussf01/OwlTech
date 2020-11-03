@@ -128,7 +128,7 @@
             </div>
         </div>
     </div>
-    <div class="social-media d-flex align-items-center ">
+    <!-- <div class="social-media d-flex align-items-center ">
         <div class="container">
             <div class="row d-flex justify-content-end">
                 <p>Siga nossas redes sociais</p>
@@ -140,7 +140,7 @@
 
             </div>
         </div>
-    </div>
+    </div> -->
 
  
 
