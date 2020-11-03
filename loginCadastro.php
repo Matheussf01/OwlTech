@@ -34,22 +34,6 @@ if(isset($_POST['login'])){
 
 }else if(isset($_POST['cadastrar'])){
     
-<<<<<<< HEAD
-    $id = $_POST['id'];
-    $senha = md5($_POST['senha']);
-    $nome = $_POST['nome'];
-    $deficiencia = $_POST['deficiencia'];
-
-    if($deficiencia == ""){$deficiencia=NULL;}
-   
-
-  if($id == "" || $id == null || $senha  == "" || $senha == null || $nome  == "" || $nome == null ){
-    echo"<script language='javascript' type='text/javascript'>
-    alert('O campo login deve ser preenchido');window.location.href='
-    cadastro.html';</script>";
-
-    }else{
-=======
      $id = $_POST['id'];
      $senha = md5($_POST['senha']);
      $nome = $_POST['nome'];
@@ -71,28 +55,12 @@ if(isset($_POST['login'])){
    
     }else{
         
->>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
 
         $query_select = ('select * from usuarios WHERE registro = '.$id.' and senha = "'.$senha.'"');
         //echo $query_select;
         $verifica = mysqli_query($conn, $query_select) or die("erro ao selecionar");
 
         if (mysqli_num_rows($verifica)>0){
-<<<<<<< HEAD
-
-            echo"<script language='javascript' type='text/javascript'>
-            alert('Esse login já existe');window.location.href='
-            cadastro.html';</script>";
-            die();
-
-      }else{
-        $query = 'insert into usuarios (registro, senha, nome, deficiencia) VALUES ('.$id.',"'.$senha.'","'.$nome.'","'.$deficiencia.'")';
-        $insert = mysqli_query($conn, $query);
-        echo $query;
-        if($insert){
-            
-            if($deficiencia == ""){
-=======
            
 
             echo"<script language='javascript' type='text/javascript'>
@@ -108,7 +76,6 @@ if(isset($_POST['login'])){
         if($insert){
             
             if($deficiencia == FALSE){
->>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
                 echo"<script language='javascript' type='text/javascript'>
                 alert('Usuário cadastrado com sucesso!');window.location.
                 href='portal-Beneficiado.php'</script>";
