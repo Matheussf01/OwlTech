@@ -1,6 +1,7 @@
 const login = document.querySelector('.login');
 const btn_login = document.querySelector('.button-login');
 const email = document.querySelector('.email');
+const nome = document.querySelector('.nome');
 const question = document.querySelector('.question');
 const social_media = document.querySelector('.social-media');
 const botaoLogin = document.querySelector('#login')
@@ -22,6 +23,7 @@ x.addListener(myFunction)
 function cadastrar() {
     if (x.matches) {
         email.style.display = "block"
+        nome.style.display = "block"
         question.style.display = "block"
         botaoLogin.style.display = "none";
         register.style.display = "none";
@@ -31,6 +33,7 @@ function cadastrar() {
         login.style.margin = "-15rem auto";
         btn_login.style.top = "5rem"
         email.style.display = "block"
+        nome.style.display = "block"
         question.style.display = "block"
 
         social_media.style.margin = "15rem auto"
@@ -61,6 +64,7 @@ function myFunction(x) {
         register.style.display = "inline-block";
         registered.style.display = "none";
         email.style.display = "none"
+        nome.style.display = "none"
         question.style.display = "none"
     }
 }

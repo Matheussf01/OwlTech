@@ -4,14 +4,14 @@
 
   
 
-    if((empty($_SESSION['id'])))
+    if( empty($_SESSION['id']) || $_SESSION['deficiencia'] == 1)
     {
         /*verifica se existem as informações*/
         session_destroy();
         header('location:index.php');
     }
     else
-    {
+    { 
 
         $uri = $_SERVER["REQUEST_URI"];
         $uriArray = explode("/",$uri);
@@ -49,16 +49,9 @@
 
         <div>
             <a class="nav-link  img-perfil d-flex align-items-center justify-content-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <?php 
-                    if(!empty($usuario_info['foto_perfil']))
-                        {
-                            echo('<img src="'.$usuario_info['foto_perfil'].'">');
-                        }
-                        else
-                        {
-                            echo(' <img src="images/persona.jpg">');
-                        }
-                    ?>
+                <?php 
+                    echo('<img src="'.$usuario_info['foto_perfil'].'">');
+                ?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#perfilModal">Perfil</a>
@@ -153,51 +146,11 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Perfil</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
 
-                <div class="form-group">
-                        <form action="alterarFoto.php" method="POST" enctype="multipart/form-data">
-                            <div class="nav-link img-perfil mr-3">
-                                <?php 
-                                    if(!empty($usuario_info['foto_perfil']))
-                                    {
-                                        echo('<img src="'.$usuario_info['foto_perfil'].'">');
-                                    }
-                                    else
-                                    {
-                                        echo(' <img src="images/persona.jpg">');
-                                    }
-                                ?>
-                            </div>
-                            <div>
-                                <label   label class="col-form-label mr-5">Mudar foto de perfil</label>
-                                <input type="file" name="image" value="Selecione um arquivo">
-                                <input type="submit" name="alterarFoto" class="btn" value="Alterar">
-                            </div>
-                        </form>
-                        <form action="">
-                            <div>
-                                <label class="col-form-label">Nome:</label>
-                                <input type="text" class="form-control" id="recipient-name">
-                            </div>
-                            <div>
-                                <label class="col-form-label">Cargo:</label>
-                                <input type="text" class="form-control" id="recipient-name">
-                            </div>
-                            <div>
-                                <label class="col-form-label">Deficiência:</label>
-                                <input type="text" class="form-control" id="recipient-name">
-                            </div>
-
-                            <div>
-                                <label class="col-form-label">Bio:</label>
-                                <textarea class="form-control" id="message-text"></textarea>
-                            </div>
-                        </form>
-                    </div>
                 </div>
                 <div class="modal-footer">
                     <a href="portal-Beneficiado.html" data-dismiss="modal">Close</a>
@@ -206,6 +159,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- MODAL FALE CONOSCO -->
     <div class="modal fade" id="faleConoscoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

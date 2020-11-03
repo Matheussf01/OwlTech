@@ -34,40 +34,48 @@ if(isset($_POST['login'])){
 
 }else if(isset($_POST['cadastrar'])){
     
-    $id = $_POST['id'];
-    $senha = md5($_POST['senha']);
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $deficiencia = $_POST['deficiencia'];
+     $id = $_POST['id'];
+     $senha = md5($_POST['senha']);
+     $nome = $_POST['nome'];
+     $email = $_POST['email'];
+     $deficienciaTipo = $_POST['deficiencia'];
+     $deficiencia=TRUE;
 
-    if($deficiencia == ""){$deficiencia=NULL;}
-   
+    if($deficienciaTipo == "")
+    {
+        $deficiencia = FALSE;
+        $deficienciaTipo = NULL;
+    }
+  
 
   if($id == "" || $id == null || $senha  == "" || $senha == null || $nome  == ""  || $nome == null || $email  == ""  || $email == null ){
     echo"<script language='javascript' type='text/javascript'>
     alert('O campo login deve ser preenchido');window.location.href='
     cadastro.html';</script>";
-
+   
     }else{
+        
 
         $query_select = ('select * from usuarios WHERE registro = '.$id.' and senha = "'.$senha.'"');
         //echo $query_select;
         $verifica = mysqli_query($conn, $query_select) or die("erro ao selecionar");
 
         if (mysqli_num_rows($verifica)>0){
+           
 
             echo"<script language='javascript' type='text/javascript'>
-            alert('Esse login já existe');window.location.href='
-            cadastro.html';</script>";
-            die();
+            alert('Esse login já existe');window.location.href='index.php';</script>";
+           
 
       }else{
-        $query = 'insert into usuarios (registro, senha, nome, deficiencia, email) VALUES ('.$id.',"'.$senha.'","'.$nome.'","'.$deficiencia.'","'.$email.'")';
+    
+
+        $query = 'insert into usuarios (registro, senha, nome, deficiencia, deficiencia_tipo, email) VALUES ('.$id.',"'.$senha.'","'.$nome.'","'.$deficiencia.'","'.$deficienciaTipo.'","'.$email.'")';
         $insert = mysqli_query($conn, $query);
-        echo $query;
+       
         if($insert){
             
-            if($deficiencia == ""){
+            if($deficiencia == FALSE){
                 echo"<script language='javascript' type='text/javascript'>
                 alert('Usuário cadastrado com sucesso!');window.location.
                 href='portal-Beneficiado.php'</script>";
