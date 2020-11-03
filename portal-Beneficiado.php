@@ -42,7 +42,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg  d-flex justify-content-around">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
             <img src="images/owlbility.png" alt="logo Dow">
         </a>
 
@@ -127,7 +127,7 @@
             </div>
         </div>
     </div>
-    <div class="social-media d-flex align-items-center ">
+    <!-- <div class="social-media d-flex align-items-center ">
         <div class="container">
             <div class="row d-flex justify-content-end">
                 <p class="mr-3">Siga nossas redes sociais</p>
@@ -138,7 +138,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- ================================ -->
     <!-- MODAL AREA -->

@@ -15,7 +15,7 @@
 
     <div class="sides">
         <div class="side-text">
-            <img src="/images/logoPNG.png" alt="">
+            <img src="images/logoPNG.png" alt="">
             <p>Give a hand to someone</p>
         </div>
         <div class="side-image">
@@ -54,18 +54,18 @@
         </div>
 
         <div class="button-login">
-            <input type="submit" id="login" name="login" value="login">
+            <input type="submit" id="login" name="login" value="Login">
             <a id="register" onclick="cadastrar()">Cadastrar</a>
             <input type="submit" id="registered" name="cadastrar" value="Finalizar Cadastro">
         </div>
     </form>
     <div class="social-media">
 
-        <p class="copy">Copy Right ©</p>
+        <!-- <p class="copy">Copy Right ©</p>
         <p>Siga nossas redes sociais:</p>
         <a href=""><img src="images/insta.png" /></a>
         <a href=""><img src="images/face.png" /></a>
-        <a href=""><img src="images/twitter.png" /></a>
+        <a href=""><img src="images/twitter.png" /></a> -->
     </div>
     <script src="js/home.js"></script>
 </body>
