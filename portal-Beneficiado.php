@@ -160,10 +160,6 @@
         </div>
     </div>
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 6581b9c659a9776e3b07169277512c394bdf8aae
     <!-- MODAL FALE CONOSCO -->
     <div class="modal fade" id="faleConoscoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
