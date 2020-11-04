@@ -1,4 +1,16 @@
 
+    
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contribuicoesModal">Contribuições</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
 
 <div class="muck-up">
     <div class="bottom">
@@ -56,4 +68,9 @@
         </ul>
     </div>
 </div>
-    
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal">Fechar</a>
+      </div>
+    </div>
+  </div>

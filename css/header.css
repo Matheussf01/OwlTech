@@ -1,0 +1,45 @@
+.button-wrapper {
+    position: relative;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-wrapper span.label {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--light-red) 5%, var(--main-red) 100%);
+    cursor: pointer;
+    border-radius: 5rem;
+    box-shadow: 0px 10px 14px -7px #276873;
+    color: #fff;
+    padding: 10px 0;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+#upload {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.alterar {
+    margin-top: 0.5;
+    margin-bottom: 1rem;
+}
+
+.image-perfil {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 50%;
+}

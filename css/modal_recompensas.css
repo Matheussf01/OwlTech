@@ -1,0 +1,111 @@
+.image-reward-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reward-modal-body img {
+    margin: 1rem 0;
+    width: 100px;
+}
+
+.flip-scale-up-hor {
+    -webkit-animation: flip-scale-up-hor 0.5s linear both;
+    animation: flip-scale-up-hor 0.5s linear both;
+}
+
+@-webkit-keyframes flip-scale-up-hor {
+    0% {
+        -webkit-transform: scale(1) rotateX(0);
+        transform: scale(1) rotateX(0);
+    }
+    50% {
+        -webkit-transform: scale(2.5) rotateX(-90deg);
+        transform: scale(2.5) rotateX(-90deg);
+    }
+    100% {
+        -webkit-transform: scale(1) rotateX(-180deg);
+        transform: scale(1) rotateX(-180deg);
+    }
+}
+
+@keyframes flip-scale-up-hor {
+    0% {
+        -webkit-transform: scale(1) rotateX(0);
+        transform: scale(1) rotateX(0);
+    }
+    50% {
+        -webkit-transform: scale(2.5) rotateX(-90deg);
+        transform: scale(2.5) rotateX(-90deg);
+    }
+    100% {
+        -webkit-transform: scale(1) rotateX(-360deg);
+        transform: scale(1) rotateX(-360deg);
+    }
+}
+
+.box-rewards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 1rem 2rem;
+    grid-gap: 5rem;
+}
+
+.box-rewards .box {
+    padding: 1rem;
+    box-shadow: 5px 10px 14px 5px #d3d2d2;
+    border-radius: 5px;
+}
+
+.box-rewards .box h3 {
+    text-align: center;
+}
+
+.box-rewards .box img {
+    margin: 1rem 0;
+    width: 100px;
+}
+
+.pontos {
+    padding: 0 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.scale-up-center {
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.resgatar {
+    color: var(--main-red);
+    transition: 0.2s ease-in-out;
+}
+
+.resgatar:hover {
+    transform: scale(1.05);
+    color: var(--light-red);
+}

@@ -21,7 +21,9 @@
 
             <?php   if($_SESSION['deficiencia'] == 0){ ?>
                 <div class="itens-menu">
-                    <a href="#" onclick='abreContribuicoes()' > Contribuições </a>
+                    <a href="#" data-toggle="modal" data-target="#contribuicoesModal" onclick='abreContribuicoes()' > Contribuições </a>
+                    <a href="#" data-toggle="modal" data-target="#recompensasModal" > Recompensas </a>
+
                 </div>
             <?php } ?>
 
@@ -53,19 +55,22 @@
                     </button>
                 </div>
                 <div class="modal-body">
-
-                            
+         
                     <div class="form-group">
-                        <form action="alterarFoto.php" method="POST" enctype="multipart/form-data">
+                        <form action="alterarFoto.php" class="image-perfil" method="POST" enctype="multipart/form-data">
                             <div class="nav-link img-perfil mr-3">
                                 <?php 
                                     echo('<img src="'.$usuario_info['foto_perfil'].'">');
                                 ?>
                             </div>
                             <div>
-                                <label   label class="col-form-label mr-5">Mudar foto de perfil</label>
-                                <input type="file" name="image" value="Selecione um arquivo">
-                                <input type="submit" name="alterarFoto" class="btn" value="Alterar">
+                                <div class="button-wrapper">
+                                    <span class="label">
+                                        Escolha uma imagem
+                                    </span>
+                                    <input type="file" name="upload" id="upload" class="upload-box" placeholder="Upload File">
+                                <input class="alterar" type="submit" name="alterarFoto" class="btn" value="Alterar Foto">
+                                </div>
                             </div>
                         </form>
                         <form action="">
@@ -95,19 +100,26 @@
 
                         </form>
                     </div>
+
                 </div>
 
 
                 <div class="modal-footer">
-                    <a href="portal-Beneficiado.html" data-dismiss="modal">Close</a>
-                    <a href="portal-Beneficiado.html" data-dismiss="modal">Salvar</a>
+                    <a href="#" data-dismiss="modal">Fechar</a>
+                    <a href="#" data-dismiss="modal">Salvar</a>
                 </div>
             </div>
         </div>
     </div>
 
 
+<div class="modal fade" id="recompensasModal" tabindex="-1" role="dialog" aria-labelledby="recompensasModalTitle" aria-hidden="true">
+    <?php include('modal_recompensas.php');?>
+</div>
 
+<div class="modal fade" id="contribuicoesModal" tabindex="-1" role="dialog" aria-labelledby="contribuicoesModalTitle" aria-hidden="true">
+    <?php include('modal_contribuicoes.php');?>
+</div>
 
 
 
