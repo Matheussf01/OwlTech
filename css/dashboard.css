@@ -1,0 +1,44 @@
+html {
+    margin: 2rem 5rem;
+}
+
+body {
+    background-color: #f7f7f7;
+}
+
+.grafico {
+    width: 100%;
+    display: grid;
+    grid-gap: 5rem;
+    margin: 1rem 5rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.grafico #myChart {
+    width: 80% !important;
+    height: 80% !important;
+}
+
+.grafico #pie {
+    width: 80% !important;
+    height: 80% !important;
+}
+
+@media (max-width: 992px) {
+    html {
+        margin: 2rem 1rem;
+    }
+    .grafico {
+        width: 100%;
+        margin: 1rem 0;
+        grid-template-columns: 1fr;
+    }
+    .grafico #myChart {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    .grafico #pie {
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
