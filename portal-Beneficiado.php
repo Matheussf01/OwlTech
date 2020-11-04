@@ -42,7 +42,7 @@
 <body>
 
     <nav class="navbar navbar-expand-lg  d-flex justify-content-around">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
             <img src="images/owlbility.png" alt="logo Dow">
         </a>
 

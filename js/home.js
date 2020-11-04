@@ -7,6 +7,7 @@ const social_media = document.querySelector('.social-media');
 const botaoLogin = document.querySelector('#login')
 const register = document.querySelector('#register')
 const registered = document.querySelector('#registered')
+const voltar = document.querySelector('.voltar')
     // function cadastrar() {
     //     login.style.height = "20rem";
     //     login.style.margin = "-15rem auto";
@@ -28,10 +29,11 @@ function cadastrar() {
         botaoLogin.style.display = "none";
         register.style.display = "none";
         registered.style.display = "inline-block";
+        voltar.style.display = "inline-block"
     } else {
         login.style.height = "20rem";
         login.style.margin = "-15rem auto";
-        btn_login.style.top = "5rem"
+        btn_login.style.top = "0"
         email.style.display = "block"
         nome.style.display = "block"
         question.style.display = "block"
@@ -41,6 +43,8 @@ function cadastrar() {
         botaoLogin.style.display = "none";
         register.style.display = "none";
         registered.style.display = "inline-block";
+        voltar.style.display = "inline-block"
+
     }
 }
 
