@@ -1,5 +1,5 @@
+
 <?php
- 
   
     if( empty($_SESSION['id']))
     {
@@ -31,7 +31,7 @@
                 <div>
                     <a class="nav-link  img-perfil d-flex align-items-center justify-content-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <?php 
-                        echo('<img src="'.$usuario_info['foto_perfil'].'">');
+                        echo('<img src="'.$_SESSION['foto_perfil'].'">');
                         ?>
                     
                     </a>
@@ -56,12 +56,25 @@
                 </div>
                 <div class="modal-body">
          
+                   
                     <div class="form-group">
-                        <form action="alterarFoto.php" class="image-perfil" method="POST" enctype="multipart/form-data">
+
+                    <?php 
+
+                        $query_select = ('select  nome, deficiencia_tipo, email, deficiencia, foto_perfil from usuarios WHERE id_usuario ='. $_SESSION['id']);
+                        $resultado = mysqli_query($conn, $query_select) or die("erro ao selecionar");
+                        $rstTemp=mysqli_fetch_array($resultado);
+
+                        $deficiencia="";
+                        if($rstTemp['deficiencia']==1){
+                            $deficiencia = $rstTemp['deficiencia_tipo'];
+                        }
+                        
+                        echo('
+                        <form action="alterarFoto.php" method="POST" class="image-perfil" enctype="multipart/form-data">
                             <div class="nav-link img-perfil mr-3">
-                                <?php 
-                                    echo('<img src="'.$usuario_info['foto_perfil'].'">');
-                                ?>
+                                <img src="'.$rstTemp['foto_perfil'].'">
+                                
                             </div>
                             <div>
                                 <div class="button-wrapper">
@@ -73,40 +86,57 @@
                                 </div>
                             </div>
                         </form>
-                        <form action="">
+                        <form action="#" method="POST">
                             <div>
                                 <label class="col-form-label">Nome:</label>
-                                <input type="text" class="form-control" name="nome" id="recipient-name" value="">
+                                <input type="text" class="form-control" name="nome" id="recipient-name" value="'.$rstTemp['nome'].'">
                             </div>
                             <div>
-                                <label class="col-form-label">Senha:</label>
-                                <input type="text" class="form-control" name="senha" id="recipient-name" value="">
-                            </div>
-                            <div>
-                                <label class="col-form-label">Deficiência:</label>
-                                <input type="text" class="form-control" name="deficiencia" id="recipient-name" value="">
+                                <label class="col-form-label">Alterar Senha?</label>
+                                <input type="checkbox" name="alterasenha" value="true" id="myCheck" onclick="showCheckbox()">
+                                <input id="text" class="form-control" name="senha" id="recipient-name" style="display:none" placeholder="Digite a nova senha...">
+
                             </div>
                             <div>
                                 <label class="col-form-label">E-mail:</label>
-                                <input type="text" class="form-control" name="email" id="recipient-name" value="">
+                                <input type="text" class="form-control" name="email" id="recipient-name" value="'.$rstTemp['email'].'">
                             </div>
                             <div class="field question" value="">
                                 <p>Tem alguma Deficiência?</p>
-                                <select name="deficiencia" id="">
-                                    <option value="">Não</option>
-                                    <option value="Visual">Visual</option>
-                                </select>
-                            </div>
+                                <select name="deficiencia" id="">');
+                               
+                                $selectDeficiencia = ('SELECT nome FROM deficiencia ORDER BY id_deficiencia ASC');
 
+                                $deficiencias = mysqli_query($conn, $selectDeficiencia) or die("erro ao selecionar");
+                               
+                                while($rstTempdeficiencias=mysqli_fetch_array($deficiencias)){
+                                    
+                                     $selected="";
+                                     $listDeficiencia = $rstTempdeficiencias['nome'];
+                                     $listDeficiencia = utf8_encode($listDeficiencia);
+
+                                    if($listDeficiencia == $rstTemp['deficiencia_tipo']){
+                                        $selected="selected";
+                                    }
+                                    echo'<option value="'.$listDeficiencia.'" '.$selected.'>'.$listDeficiencia.'</option>';
+
+                                }
+                               
+                            
+                                echo('</select>
+                            </div>
+                            <input type="submit" name="alterarDados"  value="Salvar">
                         </form>
+                        '); ?>
+                        
                     </div>
 
                 </div>
 
-
                 <div class="modal-footer">
-                    <a href="#" data-dismiss="modal">Fechar</a>
-                    <a href="#" data-dismiss="modal">Salvar</a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar </button>
+                  
+                   
                 </div>
             </div>
         </div>
@@ -120,8 +150,47 @@
 <div class="modal fade" id="contribuicoesModal" tabindex="-1" role="dialog" aria-labelledby="contribuicoesModalTitle" aria-hidden="true">
     <?php include('modal_contribuicoes.php');?>
 </div>
+    <?php
 
 
+    if(isset($_POST['alterarDados'])){
+
+        $nome = $_POST['nome'];
+        $email = $_POST['email'];
+        
+        $senha="";
+        if(isset($_POST['alterasenha'])){
+            $senha = 'senha = "'. md5($_POST['senha']).'",';
+            
+        }
+       
+        $deficienciaTipo = $_POST['deficiencia'];
+        $deficiencia = 1;
+
+        if($deficienciaTipo == "Não"){
+            $deficiencia = 0;
+        }
+    
+
+        $query = (' UPDATE usuarios SET nome = "'.$nome.'" ,  '.$senha.' deficiencia_tipo = "'.$deficienciaTipo.'" , email = "'.$email.'" , deficiencia = '.$deficiencia.' WHERE id_usuario ='.$_SESSION['id'] );
+        $update = mysqli_query($conn, $query);
+    
+        if($update){
+
+            $_SESSION['nome'] = $nome;
+            $_SESSION['deficiencia'] = $deficiencia;
+          
+            echo('<script>window.alert("Dados alterados!"); window.location="'.$_SESSION["paginaAtual"] .'";</script>');
+        }
+        else
+        {
+            echo('<script>window.alert("Erro ao alterar os dados!"); window.location="'.$_SESSION["paginaAtual"] .'";</script>');
+        }
+
+        
+    }
+
+} 
 
 
-    <?php } ?>
+?>

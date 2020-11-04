@@ -5,10 +5,10 @@ include("connect.php");
 if(isset($_POST['login'])){
     
 
-    $id = $_POST['id'];
+    $registro = $_POST['id'];
     $senha = md5($_POST['senha']);
    
-        $query_select = ('select * from usuarios WHERE registro = '.$id.' and senha = "'.$senha.'"');
+        $query_select = ('select * from usuarios WHERE registro = '.$registro.' and senha = "'.$senha.'"');
        //echo $query_select;
         $verifica = mysqli_query($conn, $query_select) or die("erro ao selecionar");
         if (mysqli_num_rows($verifica)<=0){
@@ -18,11 +18,15 @@ if(isset($_POST['login'])){
             die();
         }else{
             $rstTemp=mysqli_fetch_array($verifica);
-            setcookie("login",$id);
+            setcookie("login",$registro);
             //echo $rstTemp['nome'];
-            $_SESSION['id'] = $id;
+            $_SESSION['registro'] = $registro;
+            $_SESSION['id'] = $rstTemp['id_usuario'];
             $_SESSION['nome'] = $rstTemp['nome'];
             $_SESSION['deficiencia'] = $rstTemp['deficiencia'];
+            $_SESSION['foto_perfil'] = $rstTemp['foto_perfil'];
+
+
 
             if( $rstTemp['deficiencia'] != 0){
                 header("Location:portal-Beneficiado.php");
@@ -75,16 +79,11 @@ if(isset($_POST['login'])){
        
         if($insert){
             
-            if($deficiencia == 1){
+          
                 echo"<script language='javascript' type='text/javascript'>
                 alert('Usuário cadastrado com sucesso!');window.location.
-                href='portal-Beneficiado.php'</script>";
-            }else{
-                echo"<script language='javascript' type='text/javascript'>
-                alert('Usuário cadastrado com sucesso!');window.location.
-                href='portal-Colaborador.php'</script>";
-            }
-
+                href='index.php'</script>";
+         
 
         }else{
           echo"<script language='javascript' type='text/javascript'>

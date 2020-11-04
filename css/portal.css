@@ -97,7 +97,9 @@ nav.navbar {
     transform: translateY(-1px);
 }
 
-.modal-footer a {
+.modal-footer a, 
+.modal-footer input, 
+.modal-footer button {
     text-align: center;
     box-shadow: 0px 10px 14px -7px #276873;
     background: linear-gradient(to bottom, var(--light-red) 5%, var(--main-red) 100%);
@@ -114,7 +116,9 @@ nav.navbar {
     text-shadow: 0px 1px 0px #3d768a;
 }
 
-.modal-footer a:hover {
+.modal-footer a:hover, 
+.modal-footer input:hover,
+.modal-footer button:hover {
     background: linear-gradient(to bottom, var(--main-red) 5%, var(--light-red) 100%);
     color: #fff;
 }
