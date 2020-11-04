@@ -4,7 +4,7 @@
 
   
 
-    if( empty($_SESSION['id']) || $_SESSION['deficiencia'] == 1)
+    if( empty($_SESSION['id']) || $_SESSION['deficiencia'] == 0)
     {
         /*verifica se existem as informações*/
         session_destroy();
@@ -41,27 +41,9 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg  d-flex justify-content-around">
-        <a class="navbar-brand" href="index.php">
-            <img src="images/owlbility.png" alt="logo Dow">
-        </a>
+    <?php include('header.php');?>
 
-
-        <div>
-            <a class="nav-link  img-perfil d-flex align-items-center justify-content-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <?php 
-                    echo('<img src="'.$usuario_info['foto_perfil'].'">');
-                ?>
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#perfilModal">Perfil</a>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#faleConoscoModal">Fale Conosco</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="sair.php">Sair</a>
-            </div>
-        </div>
-
-    </nav>
+    
     <div class="sides container d-flex align-items-center">
         <div class="row col-12 align-items-center">
             <div class="col-md-6">
@@ -140,25 +122,6 @@
     <!-- Button trigger modal -->
 
     <!-- Modal PERFIL-->
-    <div class="modal fade" id="perfilModal" tabindex="-1" role="dialog" aria-labelledby="perfilModalTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Perfil</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                </div>
-                <div class="modal-footer">
-                    <a href="portal-Beneficiado.html" data-dismiss="modal">Close</a>
-                    <a href="portal-Beneficiado.html" data-dismiss="modal">Salvar</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- MODAL FALE CONOSCO -->
     <div class="modal fade" id="faleConoscoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
