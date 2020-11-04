@@ -88,7 +88,7 @@
                                                  <button type="button" class="btn-solicitar" data-solicitacao="'.$rstTemp['id_solicitacao'].'"  data-toggle="modal" data-target="#contribuicoes">
                                                     Ajudar
                                                 </button>
-                                              </span>
+                                              </span> 
                                             </div>
                                         </div>
                                     </li>';
@@ -116,7 +116,7 @@
                 <span aria-hidden="true">&times;</span>
               </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body modal-body-ajudarColaborador">
                    
 
                 </div>
@@ -151,7 +151,7 @@
                     url: 'modal_ajudar.php',
                     data: pacote
                 }).done(function (dados) {            
-                        $('.modal-body').html(dados);
+                        $('.modal-body-ajudarColaborador').html(dados);
                     
                     });
 

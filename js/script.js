@@ -42,7 +42,21 @@ function showCheckbox() {
   // Get the checkbox
   var checkBox = document.getElementById("myCheck");
   // Get the output text
-  var text = document.getElementById("text");
+  var text = document.getElementById("input-check");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox.checked == true){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+
+function showCheckbox2() {
+  // Get the checkbox
+  var checkBox = document.getElementById("myCheck2");
+  // Get the output text
+  var text = document.getElementById("input-check2");
 
   // If the checkbox is checked, display the output text
   if (checkBox.checked == true){

@@ -94,7 +94,7 @@
                             <div class="campo">
                                 <label class="col-form-label">Alterar Senha?</label>
                                 <input type="checkbox" name="alterasenha" value="true" id="myCheck" onclick="showCheckbox()">
-                                <input id="text" class="form-control" name="senha" id="recipient-name" style="display:none" placeholder="Digite a nova senha...">
+                                <input type="text" class="form-control" name="senha" id="input-check" style="display:none" placeholder="Digite a nova senha...">
 
                             </div>
                             <div class="campo">
@@ -148,6 +148,12 @@
 <div class="modal fade" id="contribuicoesModal" tabindex="-1" role="dialog" aria-labelledby="contribuicoesModalTitle" aria-hidden="true">
     <?php include('modal_contribuicoes.php');?>
 </div>
+
+<div class="modal fade" id="faleConoscoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <?php include('modal_faleConosco.php');?> 
+</div>
+
+
     <?php
 
 
@@ -172,7 +178,7 @@
 
         $query = (' UPDATE usuarios SET nome = "'.$nome.'" ,  '.$senha.' deficiencia_tipo = "'.$deficienciaTipo.'" , email = "'.$email.'" , deficiencia = '.$deficiencia.' WHERE id_usuario ='.$_SESSION['id'] );
         $update = mysqli_query($conn, $query);
-    
+        echo $query;
         if($update){
 
             $_SESSION['nome'] = $nome;

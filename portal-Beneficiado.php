@@ -58,7 +58,7 @@
                     <div class="muck-up">
                         <div class="bottom">
                             <ul class="tasks">
-                                <li class=" green">
+                                <!-- <li class=" green">
                                     <span class="task-title">Locomoção</span>
                                     <span class="task-time">Em andamento</span>
                                     <span class="task-cat">Metrô Vila Prudente</span>
@@ -68,30 +68,33 @@
                                     <span class="task-title">Transporte de Objetos</span>
                                     <span class="task-time">11/09/2020</span>
                                     <span class="task-cat">Troca de cadeira</span>
-                                </li>
+                                </li> -->
 
-                                <li class=" historico">
-                                    <span class="task-title">Auxilo com tarefas manuais</span>
-                                    <span class="task-time">11/09/2020</span>
-                                    <span class="task-cat">Organização de documentos</span>
-                                </li>
+                                <?php
+                            
+                                $query_select = ('SELECT * FROM solicitacao WHERE id_beneficiado = '.$_SESSION['id'].' ORDER BY dt_solicitacao desc');
 
-                                <li class=" historico">
-                                    <span class="task-title">Outros</span>
-                                    <span class="task-time">11/09/2020</span>
-                                    <span class="task-cat">Computador com defeito</span>
-                                </li>
+                                $sqlresult = mysqli_query($conn, $query_select) or die("erro ao selecionar");
+                                while($rstTemp=mysqli_fetch_array($sqlresult)){
 
-                                <li class=" historico">
-                                    <span class="task-title">Outros</span>
-                                    <span class="task-time">11/09/2020</span>
-                                    <span class="task-cat">Reunião com a diretória</span>
-                                </li>
-                                <li class=" historico">
-                                    <span class="task-title">Outros</span>
-                                    <span class="task-time">11/09/2020</span>
-                                    <span class="task-cat">Microsoft Teams</span>
-                                </li>
+                                    $classLi = "historico";
+                                    $statusSolicitacao = $rstTemp['dt_conclusao'];
+
+                                    if($rstTemp['dt_conclusao'] == NULL){
+                                        $classLi = "green";
+                                        $statusSolicitacao = "Em andamento";
+                                    }
+
+                                    echo'
+                                        <li class="'. $classLi.'">
+                                            <span class="task-title">'.$rstTemp['tarefa'].'</span>
+                                            <span class="task-time">'. $statusSolicitacao .'</span>
+                                            <span class="task-cat">'.$rstTemp['destino'].'</span>
+                                        </li>';
+                                    }
+                                   
+    
+                                ?>
                             </ul>
                         </div>
                     </div>
@@ -99,104 +102,10 @@
             </div>
         </div>
     </div>
-    <!-- <div class="social-media d-flex align-items-center ">
-        <div class="container">
-            <div class="row d-flex justify-content-end">
-                <p class="mr-3">Siga nossas redes sociais</p>
-                <div>
-                    <a href=""><img src="/images/insta.png" /></a>
-                    <a href=""><img src="/images/face.png" /></a>
-                    <a href=""><img src="/images/twitter.png" /></a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- ================================ -->
-    <!-- MODAL AREA -->
-    <!-- ================================ -->
-
-    <!-- Button trigger modal -->
-
-    <!-- Modal PERFIL-->
-
-    <!-- MODAL FALE CONOSCO -->
-    <div class="modal fade" id="faleConoscoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Fale Conosco</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Assunto</label>
-                            <input type="text" class="form-control" id="recipient-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">Mensagem:</label>
-                            <textarea class="form-control" id="message-text"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <a href="portal-Beneficiado.html" data-dismiss="modal">Close</a>
-                    <a href="portal-Beneficiado.html" data-dismiss="modal">Enviar</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL SOLICITAR AJUDA -->
     <div class="modal fade" id="solicitar-ajuda" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="solicitar-ajudaLabel">Solicitar Ajuda</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-                </div>
-                <div class="modal-body">
-                    <form>
+        <?php include('modal_solicitar.php');?>
 
-
-                        <div class="form-group">
-                            <label for="solicitarajuda-localizacao" class="col-form-label">Localização</label>
-                            <input type="text" class="form-control" id="solicitarajuda-localizacao" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="solicitarajuda-Agendar" class="col-form-label">Agendar horário?</label>
-                            <input type="checkbox" id="solicitarajuda-Agendar">
-                        </div>
-                        <div class="form-group">
-                            <label for="solicitarajuda-tarefa" class="col-form-label">Tarefa a ser realizada:</label>
-                            <select name="tarefa" id="solicitarajuda-tarefa">
-                                <option value="#">Locomoção</option>
-                                <option value="#">Transporte de Objetos</option>
-                                <option value="#">Auxilio com tarefas manuais</option>
-                                <option value="#">Outros</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="solicitarajuda-destino" class="col-form-label">Destino</label>
-                            <input type="text" class="form-control" id="solicitarajuda-destino">
-                        </div>
-                        <div class="form-group">
-                            <label for="solicitarajuda-descricao" class="col-form-label">Descrição:</label>
-                            <textarea class="form-control" id="solicitarajuda-descricao"></textarea>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <a href="portal-Beneficiado.html" class="btn-fechar" data-dismiss="modal">Fechar</a>
-                    <a href="portal-Beneficiado.html" data-dismiss="modal">Enviar</a>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
 
