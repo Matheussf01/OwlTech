@@ -54,10 +54,15 @@
 
             <div class="field question">
                 <p>Tem alguma Deficiência?</p>
-                <select name="deficiencia" id="">
-                    <option value="">Não</option>
-                    <option value="Visual">Visual</option>
-                </select>
+                <?php
+                    $query_select = ('SELECT * FROM deficiencia ORDER BY id_deficiencia ASC');
+                    $sqlresult = mysqli_query($conn, $query_select) or die("erro ao selecionar");
+                    echo'<select name="deficiencia" id="">';
+                    while($rstTemp=mysqli_fetch_array($sqlresult)){
+                        echo'<option value="'.utf8_encode($rstTemp['nome']).'">'.utf8_encode($rstTemp['nome']).'</option>';
+                    }
+                    echo'</select>';
+                ?>
             </div>
 
         </div>

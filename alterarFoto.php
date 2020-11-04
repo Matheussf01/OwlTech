@@ -36,8 +36,11 @@
                     move_uploaded_file ($foto , $novoDestino );
                     
                     echo $novoDestino;
-                    $sqlcode=('update usuarios set foto_perfil="'.$novoDestino.'" where registro='.$_SESSION['id'].';');
+                    $sqlcode=('update usuarios set foto_perfil="'.$novoDestino.'" where id_usuario='.$_SESSION['id'].';');
                     mysqli_query($conn,$sqlcode);
+
+                    
+                    $_SESSION['foto_perfil'] = $novoDestino;
                     echo('<script>window.alert("Foto alterada!"); window.location="'.$_SESSION["paginaAtual"] .'";</script>');
                 }
                 else

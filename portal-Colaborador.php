@@ -16,10 +16,6 @@
         $uriArray = explode("/",$uri);
         $_SESSION["paginaAtual"] = end($uriArray);
 
-        $sqlusuario=('select * from usuarios where registro="'.$_SESSION['id'].'";'); /*pesquisa as informações do usuario com base no email*/
-        $result=mysqli_query($conn,$sqlusuario);  /*executa a query*/
-        $usuario_info=mysqli_fetch_array($result);
-             
         
 ?>
 <!DOCTYPE html>
@@ -78,7 +74,7 @@
                                     echo'
                                     <li class=" historico d-flex">
                                         <div class="img-perfil-tasks d-flex align-items-center justify-content-center">
-                                         <img src="'.$usuario_info['foto_perfil'].'">
+                                         <img src="'.$rstTemp['foto_perfil'].'">
                                         </div>
                                         <div class="tasks-box-conteudo d-flex">
                                             <div>
@@ -158,6 +154,8 @@
                     });
 
             });
+
+
         </script>                   
 
 
