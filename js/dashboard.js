@@ -3,7 +3,7 @@ const data = [5, 22, 30]
 labels.push('Colaborador', 'Def. Visual', 'Def. Auditivo')
 
 
-function loadChart() {
+function loadBarChart() {
     const ctx = document.getElementById('myChart').getContext('2d');
     const myChart = new Chart(ctx, {
         type: 'bar',
@@ -42,17 +42,17 @@ function loadChart() {
         }
     });
 }
-loadChart();
+loadBarChart();
 
 
-var ctx = document.getElementById('pie').getContext('2d');
-var myChart = new Chart(ctx, {
+const ctx = document.getElementById('pie').getContext('2d');
+const pie = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: labels,
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: 'Usuários',
+            data: data,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

@@ -4,13 +4,23 @@ html {
 
 body {
     background-color: #f7f7f7;
+    width: 80%;
+}
+
+.titulo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.titulo img {
+    width: 200px;
 }
 
 .grafico {
     width: 100%;
     display: grid;
     grid-gap: 5rem;
-    margin: 1rem 5rem;
+    margin: 1rem 0rem;
     grid-template-columns: 1fr 1fr;
 }
 
@@ -24,9 +34,48 @@ body {
     height: 80% !important;
 }
 
+.box {
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0px 10px 14px -7px #b8b8b8;
+    padding: 2rem;
+}
+
+
+/* HISTORICO FALE CONOSCO */
+
+.box-comments {
+    margin: 2rem 0;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+
+.box-comments .img-perfil {
+    margin: 0 1rem;
+}
+
+.box-comments .img-perfil img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.box-comments .info {}
+
 @media (max-width: 992px) {
     html {
         margin: 2rem 1rem;
+    }
+    body {
+        width: 100%;
+    }
+    .grafico h2 {
+        font-size: 1.6rem;
+    }
+    .titulo h1 {
+        font-size: 2rem;
+    }
+    .titulo img {
+        width: 160px;
     }
     .grafico {
         width: 100%;
@@ -40,5 +89,42 @@ body {
     .grafico #pie {
         width: 100% !important;
         height: 100% !important;
+    }
+    /* HISTORICO FALE CONOSCO */
+    .box-comments {
+        margin: 2rem 0;
+    }
+    .box-comments .img-perfil {
+        margin: 0 1rem;
+    }
+    .box-comments .img-perfil img {
+        width: 80px;
+    }
+}
+
+.scale-up-center {
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@-webkit-keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
     }
 }

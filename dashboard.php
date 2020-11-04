@@ -23,19 +23,54 @@
 
 <body>
 
-    <h1>DASHBOARD</h1>
+    <div class="titulo">
+      <h1>DASHBOARD</h1>
+      <img src="images/owlbility.png" alt="">
+    </div>
+
     <hr>
+
     <div class="grafico">
-      <div>
+      <div class="box scale-up-center">
+        <h2>Alguma Coisa Top</h2>
+      </div>
+      
+      <div class="box scale-up-center">
+        <h2>Usuários</h2>
+        <canvas id="pie" width="400" height="400"></canvas>
+      </div>
+
+      <div class="box scale-up-center">
         <h2>Histórico de usabilidade</h2>
         <canvas id="myChart" width="400" height="400"></canvas>
       </div>
       
-      <div>
-        <h2>Usuários</h2>
-        <canvas id="pie" width="400" height="400"></canvas>
+      <div class="box scale-up-center">
+          <h2>Histórico Fale Conosco</h2>
+            <div class="box-comments">
+                <div class="img-perfil">
+                    <img src="images/persona.jpg">
+                </div>
+                <div class="info">
+                    <p class="task-title"><strong>Sofia Mendes</strong></p>
+                    <p class="task-cat">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae possimus officia vero obcaecati impedit cum!</p>
+                </div>
+            </div>
+
+            <div class="box-comments">
+                <div class="img-perfil">
+                    <img src="images/persona.jpg">
+                </div>
+                <div class="info">
+                    <p class="task-title"><strong>Sabrina Ayumi</strong></p>
+                    <p class="task-cat">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae possimus officia vero obcaecati impedit cum!</p>
+                </div>
+            </div>
       </div>
+
     </div>
+
+   
 
 
     <script src="js/dashboard.js" type="text/javascript"></script>

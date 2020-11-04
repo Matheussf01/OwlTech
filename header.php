@@ -81,27 +81,27 @@
                                     <span class="label">
                                         Escolha uma imagem
                                     </span>
-                                    <input type="file" name="upload" id="upload" class="upload-box" placeholder="Upload File">
+                                    <input type="file" name="image" id="upload" class="upload-box" placeholder="Upload File">
                                 <input class="alterar" type="submit" name="alterarFoto" class="btn" value="Alterar Foto">
                                 </div>
                             </div>
                         </form>
                         <form action="#" method="POST">
-                            <div>
+                            <div class="campo">
                                 <label class="col-form-label">Nome:</label>
                                 <input type="text" class="form-control" name="nome" id="recipient-name" value="'.$rstTemp['nome'].'">
                             </div>
-                            <div>
+                            <div class="campo">
                                 <label class="col-form-label">Alterar Senha?</label>
                                 <input type="checkbox" name="alterasenha" value="true" id="myCheck" onclick="showCheckbox()">
                                 <input id="text" class="form-control" name="senha" id="recipient-name" style="display:none" placeholder="Digite a nova senha...">
 
                             </div>
-                            <div>
+                            <div class="campo">
                                 <label class="col-form-label">E-mail:</label>
                                 <input type="text" class="form-control" name="email" id="recipient-name" value="'.$rstTemp['email'].'">
                             </div>
-                            <div class="field question" value="">
+                            <div class="field question campo" value="">
                                 <p>Tem alguma Deficiência?</p>
                                 <select name="deficiencia" id="">');
                                
@@ -125,7 +125,7 @@
                             
                                 echo('</select>
                             </div>
-                            <input type="submit" name="alterarDados"  value="Salvar">
+                            <input class="salvar" type="submit" name="alterarDados"  value="Salvar">
                         </form>
                         '); ?>
                         
@@ -134,9 +134,7 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar </button>
-                  
-                   
+                    <a href="#" data-dismiss="modal">Fechar</a>
                 </div>
             </div>
         </div>
