@@ -3,7 +3,7 @@
     include("connect.php");
 
   
-    if( empty($_SESSION['id']) || $_SESSION['deficiencia'] == 0)
+    if( empty($_SESSION['id']) || $_SESSION['deficiencia'] == 1)
     {
         /*verifica se existem as informações*/
         session_destroy();
@@ -43,30 +43,8 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg  d-flex justify-content-around">
-        <a class="navbar-brand" href="index.php">
-            <img src="images/owlbility.png" alt="logo Dow">
-        </a>
-        <div class="d-flex align-items-center">
-            <div class="itens-menu">
-                <a href="#" onclick='abreContribuicoes()' > Contribuições </a>
-            </div>
-            <div>
-                <a class="nav-link  img-perfil d-flex align-items-center justify-content-center" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php 
-                      echo('<img src="'.$usuario_info['foto_perfil'].'">');
-                    ?>
-                   
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" id="editPerfil" href="#" data-toggle="modal" data-target="#perfilModal">Perfil</a>
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#faleConoscoModal">Fale Conosco</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="sair.php">Sair</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <?php include('header.php');?>
+
     <div class="sides container d-flex align-items-center">
         <div class="row col-12 align-items-center">
             <div class="col-md-6">
@@ -128,19 +106,6 @@
             </div>
         </div>
     </div>
-    <!-- <div class="social-media d-flex align-items-center ">
-        <div class="container">
-            <div class="row d-flex justify-content-end">
-                <p>Siga nossas redes sociais</p>
-                <div>
-                    <a href=""><img src="images/insta.png" /></a>
-                    <a href=""><img src="images/face.png" /></a>
-                    <a href=""><img src="images/twitter.png" /></a>
-                </div>
-
-            </div>
-        </div>
-    </div> -->
 
  
 

@@ -24,7 +24,7 @@ if(isset($_POST['login'])){
             $_SESSION['nome'] = $rstTemp['nome'];
             $_SESSION['deficiencia'] = $rstTemp['deficiencia'];
 
-            if( $rstTemp['deficiencia'] != ""){
+            if( $rstTemp['deficiencia'] != 0){
                 header("Location:portal-Beneficiado.php");
             }else{
                header("Location:portal-Colaborador.php");
@@ -75,7 +75,7 @@ if(isset($_POST['login'])){
        
         if($insert){
             
-            if($deficiencia == FALSE){
+            if($deficiencia == 1){
                 echo"<script language='javascript' type='text/javascript'>
                 alert('Usuário cadastrado com sucesso!');window.location.
                 href='portal-Beneficiado.php'</script>";
