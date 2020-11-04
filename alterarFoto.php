@@ -35,7 +35,7 @@
                     $novoDestino = $pasta.'/'.uniqid('', true).'.'.$extensao;  
                     move_uploaded_file ($foto , $novoDestino );
                     
-                    echo $novoDestino;
+                
                     $sqlcode=('update usuarios set foto_perfil="'.$novoDestino.'" where id_usuario='.$_SESSION['id'].';');
                     mysqli_query($conn,$sqlcode);
 

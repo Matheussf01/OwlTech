@@ -58,7 +58,7 @@
                     <div class="muck-up">
                         <div class="bottom">
                             <ul class="tasks">
-                                <li class=" green">
+                                <!-- <li class=" green">
                                     <span class="task-title">Locomoção</span>
                                     <span class="task-time">Em andamento</span>
                                     <span class="task-cat">Metrô Vila Prudente</span>
@@ -68,30 +68,33 @@
                                     <span class="task-title">Transporte de Objetos</span>
                                     <span class="task-time">11/09/2020</span>
                                     <span class="task-cat">Troca de cadeira</span>
-                                </li>
+                                </li> -->
 
-                                <li class=" historico">
-                                    <span class="task-title">Auxilo com tarefas manuais</span>
-                                    <span class="task-time">11/09/2020</span>
-                                    <span class="task-cat">Organização de documentos</span>
-                                </li>
+                                <?php
+                            
+                                $query_select = ('SELECT * FROM solicitacao WHERE id_beneficiado = '.$_SESSION['id'].' ORDER BY dt_solicitacao desc');
 
-                                <li class=" historico">
-                                    <span class="task-title">Outros</span>
-                                    <span class="task-time">11/09/2020</span>
-                                    <span class="task-cat">Computador com defeito</span>
-                                </li>
+                                $sqlresult = mysqli_query($conn, $query_select) or die("erro ao selecionar");
+                                while($rstTemp=mysqli_fetch_array($sqlresult)){
 
-                                <li class=" historico">
-                                    <span class="task-title">Outros</span>
-                                    <span class="task-time">11/09/2020</span>
-                                    <span class="task-cat">Reunião com a diretória</span>
-                                </li>
-                                <li class=" historico">
-                                    <span class="task-title">Outros</span>
-                                    <span class="task-time">11/09/2020</span>
-                                    <span class="task-cat">Microsoft Teams</span>
-                                </li>
+                                    $classLi = "historico";
+                                    $statusSolicitacao = $rstTemp['dt_conclusao'];
+
+                                    if($rstTemp['dt_conclusao'] == NULL){
+                                        $classLi = "green";
+                                        $statusSolicitacao = "Em andamento";
+                                    }
+
+                                    echo'
+                                        <li class="'. $classLi.'">
+                                            <span class="task-title">'.$rstTemp['tarefa'].'</span>
+                                            <span class="task-time">'. $statusSolicitacao .'</span>
+                                            <span class="task-cat">'.$rstTemp['destino'].'</span>
+                                        </li>';
+                                    }
+                                   
+    
+                                ?>
                             </ul>
                         </div>
                     </div>
@@ -99,31 +102,6 @@
             </div>
         </div>
     </div>
-    <!-- <div class="social-media d-flex align-items-center ">
-        <div class="container">
-            <div class="row d-flex justify-content-end">
-                <p class="mr-3">Siga nossas redes sociais</p>
-                <div>
-                    <a href=""><img src="/images/insta.png" /></a>
-                    <a href=""><img src="/images/face.png" /></a>
-                    <a href=""><img src="/images/twitter.png" /></a>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <!-- ================================ -->
-    <!-- MODAL AREA -->
-    <!-- ================================ -->
-
-    <!-- Button trigger modal -->
-
-    <!-- Modal PERFIL-->
-
-    <!-- MODAL FALE CONOSCO -->
-
-
-    <!-- MODAL SOLICITAR AJUDA -->
     <div class="modal fade" id="solicitar-ajuda" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <?php include('modal_solicitar.php');?>
 
