@@ -15,56 +15,25 @@
 <div class="muck-up">
     <div class="bottom">
         <ul class="tasks-colaborador">
-            <li class=" historico d-flex">
-                <div class="img-perfil-tasks d-flex align-items-center justify-content-center">
-                    <img src="images/persona.jpg">
-                </div>
-                <div class="tasks-box-conteudo">
-                    <span class="task-title">Make New Icon</span>
 
-                    <span class="task-cat">Web App</span>
-                </div>
-            </li>
-            <li class=" historico d-flex">
-                <div class="img-perfil-tasks d-flex align-items-center justify-content-center">
-                    <img src="images/persona.jpg">
-                </div>
-                <div class="tasks-box-conteudo">
-                    <span class="task-title">Make New Icon</span>
+            <?php 
+           
 
-                    <span class="task-cat">Web App</span>
-                </div>
-            </li>
-            <li class=" historico d-flex">
-                <div class="img-perfil-tasks d-flex align-items-center justify-content-center">
-                    <img src="images/persona.jpg">
-                </div>
-                <div class="tasks-box-conteudo">
-                    <span class="task-title">Make New Icon</span>
+            $query = (' SELECT * FROM solicitacao WHERE id_contribuinte = '.$_SESSION['id'].' AND dt_conclusao <> NULL ORDER BY dt_conclusao desc');
 
-                    <span class="task-cat">Web App</span>
-                </div>
-            </li>
-            <li class=" historico d-flex">
-                <div class="img-perfil-tasks d-flex align-items-center justify-content-center">
-                    <img src="images/persona.jpg">
-                </div>
-                <div class="tasks-box-conteudo">
-                    <span class="task-title">Make New Icon</span>
+            $result = mysqli_query($conn, $query) or die("erro ao selecionar");
+           
+            while($rstTemp=mysqli_fetch_array($result)){
 
-                    <span class="task-cat">Web App</span>
-                </div>
-            </li>
-            <li class=" historico d-flex">
-                <div class="img-perfil-tasks d-flex align-items-center justify-content-center">
-                    <img src="images/persona.jpg">
-                </div>
-                <div class="tasks-box-conteudo">
-                    <span class="task-title">Make New Icon</span>
+                echo '<li class=" historico d-flex">
+                    <div class="tasks-box-conteudo">
+                        <span class="task-title">'.$rstTemp['tarefa'].'</span>
+                        <span class="task-cat">'.$rstTemp['dt_solicitacao'].'&nbsp;-&nbsp;'.$rstTemp['dt_concluida'].'</span>
+                    </div>
+                </li>';
+            }
+            ?>
 
-                    <span class="task-cat">Web App</span>
-                </div>
-            </li>
         </ul>
     </div>
 </div>
