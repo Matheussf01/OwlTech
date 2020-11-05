@@ -64,14 +64,15 @@
 
         $agendarhorarioExt = '"' . $arrayAgendamento[0] . ' ' . $arrayAgendamento[1] . ':00",';
 
-        $columAgendamento = "dt_agendamento,";
-      }
-      $destino = $_POST['destino'];
-      $descricao = $_POST['descricao'];
 
-
-
-      $query = ('INSERT INTO solicitacao (id_beneficiado, ' . $columAgendamento . ' descricao, tarefa, localizacao) values (' . $_SESSION['id'] . ',' .  $agendarhorarioExt . ' "' . $descricao . '", "' . $tarefa . '", "' . $descricao . '");');
+            $columAgendamento ="dt_agendamento,";
+        }
+        $destino = $_POST['destino'];
+        $descricao = $_POST['descricao'];
+        
+           
+          
+        $query = ('INSERT INTO solicitacao (id_beneficiado, '.$columAgendamento.' descricao, tarefa, localizacao, destino) values ('.$_SESSION['id'].','.  $agendarhorarioExt.' "'.$descricao.'", "'.$tarefa.'", "'.$localizacao.'", "'.$destino.'");');
 
 
 

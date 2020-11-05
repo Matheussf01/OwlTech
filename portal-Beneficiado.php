@@ -66,7 +66,7 @@ if (empty($_SESSION['id']) || $_SESSION['deficiencia'] == 0) {
 
                   <?php
 
-                  $query_select = ('SELECT * FROM solicitacao WHERE id_beneficiado = ' . $_SESSION['id'] . ' ORDER BY dt_solicitacao desc');
+                  $query_select = ('SELECT * FROM solicitacao WHERE id_beneficiado = ' . $_SESSION['id'] . ' ORDER BY id_solicitacao DESC');
 
                   $sqlresult = mysqli_query($conn, $query_select) or die("erro ao selecionar");
                   while ($rstTemp = mysqli_fetch_array($sqlresult)) {

@@ -8,21 +8,15 @@ if ($_POST["solicitacao"]) {
   $sqlresult = mysqli_query($conn, $query_select) or die("erro ao selecionar");
   $rstTemp = mysqli_fetch_array($sqlresult);
 
-  if ($rstTemp['dt_agendamento'] == "") {
-    $dt_agendamento = "Não";
-  } else {
 
-    $dt_agendamento = $rstTemp['dt_agendamento'];
+        if($rstTemp['dt_agendamento'] == ""){
+            $dt_agendamento= "Não";
+        }else{
+         
+            $dt_agendamento= date_create($rstTemp['dt_agendamento']);
+            $dt_agendamento= "Sim, ". date_format($dt_agendamento, 'd/m/Y H:i:s');
 
-    $arrayAgendamento = explode(" ", $dt_agendamento);
-
-    $arrayAgendamentoDia = explode("-", $arrayAgendamento[0]);
-
-    $dt_agendamentoExt = $arrayAgendamentoDia[2] . '/' . $arrayAgendamentoDia[1] . '/' . $arrayAgendamentoDia[0] . ' às ' . $arrayAgendamento[1] . 'h';
-
-    $dt_agendamento = "Sim, " . $dt_agendamentoExt;
-  }
-
+        }
 
 
   echo (' <div class="col-12 d-flex">
@@ -53,7 +47,7 @@ if ($_POST["solicitacao"]) {
   if ($rstTemp['destino'] != "") {
     echo (' <div class="col-12 d-flex">
                 <p>
-                    <b>Destino</b>
+                    <b>Destino:</b>
                 </p>
                 <p>&nbsp;' . $rstTemp['destino'] . '</p>
             </div>');
