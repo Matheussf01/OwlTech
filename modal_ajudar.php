@@ -11,17 +11,9 @@
         if($rstTemp['dt_agendamento'] == ""){
             $dt_agendamento= "Não";
         }else{
-
-            $dt_agendamento= $rstTemp['dt_agendamento'];
- 
-            $arrayAgendamento = explode(" ",$dt_agendamento);
-
-            $arrayAgendamentoDia = explode("-",$arrayAgendamento[0]);
-    
-            $dt_agendamentoExt = $arrayAgendamentoDia[2].'/'.$arrayAgendamentoDia[1].'/'.$arrayAgendamentoDia[0].' às '.$arrayAgendamento[1].'h';
-
-            $dt_agendamento= "Sim, ".$dt_agendamentoExt;
-           
+         
+            $dt_agendamento= date_create($rstTemp['dt_agendamento']);
+            $dt_agendamento= "Sim, ". date_format($dt_agendamento, 'd/m/Y H:i:s');
 
         }
 
@@ -55,7 +47,7 @@
             if($rstTemp['destino'] != ""){
                 echo(' <div class="col-12 d-flex">
                 <p>
-                    <b>Destino</b>
+                    <b>Destino:</b>
                 </p>
                 <p>&nbsp;'.$rstTemp['destino'].'</p>
             </div>');

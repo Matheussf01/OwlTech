@@ -67,7 +67,7 @@
         
            
           
-        $query = ('INSERT INTO solicitacao (id_beneficiado, '.$columAgendamento.' descricao, tarefa, localizacao) values ('.$_SESSION['id'].','.  $agendarhorarioExt.' "'.$descricao.'", "'.$tarefa.'", "'.$descricao.'");');
+        $query = ('INSERT INTO solicitacao (id_beneficiado, '.$columAgendamento.' descricao, tarefa, localizacao, destino) values ('.$_SESSION['id'].','.  $agendarhorarioExt.' "'.$descricao.'", "'.$tarefa.'", "'.$localizacao.'", "'.$destino.'");');
 
            
 
