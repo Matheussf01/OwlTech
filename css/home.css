@@ -93,6 +93,12 @@ body {
     transition: 1s ease-in-out;
 }
 
+.login .inputs-login .nome {
+    display: none;
+    opacity: 1;
+    transition: 1s ease-in-out;
+}
+
 .login .inputs-login .question {
     display: none;
     opacity: 1;
@@ -151,7 +157,7 @@ body {
     .login .inputs-login,
     .sides {
         grid-template-columns: 1fr;
-        height: 20rem;
+        height: 24rem;
         text-align: center;
     }
     .sides .side-text img {

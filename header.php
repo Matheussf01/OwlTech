@@ -16,13 +16,13 @@ if (empty($_SESSION['id'])) {
       </a>
       <div class="d-flex align-items-center">
 
-        
-          <div class="itens-menu">
-            <a href="#" data-toggle="modal" data-target="#contribuicoesModal" onclick='abreContribuicoes()'> Histórico </a>
-            <a href="#" data-toggle="modal" data-target="#recompensasModal"> Recompensas </a>
 
-          </div>
- 
+        <div class="itens-menu">
+          <a href="#" data-toggle="modal" data-target="#contribuicoesModal" onclick='abreContribuicoes()'> Histórico </a>
+          <a href="#" data-toggle="modal" data-target="#recompensasModal"> Recompensas </a>
+
+        </div>
+
 
 
         <div>
@@ -123,10 +123,10 @@ if (empty($_SESSION['id'])) {
 
 
             echo ('</select>
-                            </div>
-                            <input class="salvar" type="submit" name="alterarDados"  value="Salvar">
-                        </form>
-                        '); ?>
+                      </div>
+                      <input class="btn-red" type="submit" name="alterarDados"  value="Salvar">
+                    </form>
+                  '); ?>
 
           </div>
 
