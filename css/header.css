@@ -5,14 +5,24 @@
     position: relative;
 }
 
-.button-wrapper {
+.alteracao-foto {
+    display: flex;
+    grid-gap: 2rem;
+    align-items: center;
+}
+
+.alterar {
+    width: 100px;
+}
+
+.button-wrapper-img {
     position: relative;
-    width: 150px;
+    width: 200px !important;
     text-align: center;
     cursor: pointer;
 }
 
-.button-wrapper span.label {
+.button-wrapper-img span.label {
     position: relative;
     z-index: 0;
     display: inline-block;
@@ -40,11 +50,6 @@
     cursor: pointer;
 }
 
-.alterar {
-    margin-top: 0.5;
-    margin-bottom: 1rem;
-}
-
 .image-perfil {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -66,7 +71,7 @@
     cursor: pointer;
     color: #fff;
     font-family: Arial;
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     padding: 0.7rem 1.5rem;
     text-decoration: none !important;

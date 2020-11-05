@@ -12,6 +12,10 @@ body {
     justify-content: space-between;
 }
 
+.titulo h1 {
+    color: #d31c38;
+}
+
 .titulo img {
     width: 200px;
 }
@@ -55,7 +59,7 @@ body {
 }
 
 .box-comments .img-perfil img {
-    width: 100px;
+    width: 60px;
     border-radius: 50%;
 }
 
@@ -98,7 +102,7 @@ body {
         margin: 0 1rem;
     }
     .box-comments .img-perfil img {
-        width: 80px;
+        width: 60px;
     }
 }
 

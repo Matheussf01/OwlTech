@@ -93,7 +93,7 @@ if (empty($_SESSION['id']) || $_SESSION['deficiencia'] == 1) {
 
                           <form action="concluirSolicitacao.php" method="POST">
                             <input type="text" class="d-none" name="idsolicitacao" value="' . $rstTemp['id_solicitacao'] . '">
-                            <input type="submit" name="concluiSolicitacao" value="Concluir">
+                            <input class="concluir" type="submit" name="concluiSolicitacao" value="Concluir">
                           </form>
                         </li>  ';
                   } else {
@@ -158,6 +158,7 @@ if (empty($_SESSION['id']) || $_SESSION['deficiencia'] == 1) {
       </div>
     </div>
 
+    <?php include('hand_talk.php'); ?>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -20,7 +20,7 @@ session_destroy();
 
   <div class="sides">
     <div class="side-text">
-      <img src="images/logoPNG.png" alt="">
+      <img src="images/logoPNG.png" alt="logo">
       <p>Give a hand to someone</p>
     </div>
     <div class="side-image">
@@ -83,6 +83,8 @@ session_destroy();
         <a href=""><img src="images/face.png" /></a>
         <a href=""><img src="images/twitter.png" /></a> -->
   </div>
+  <?php include('hand_talk.php'); ?>
+
   <script src="js/home.js"></script>
 </body>
 

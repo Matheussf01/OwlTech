@@ -16,7 +16,7 @@
           <div class="box">
             <h3>Curso de Inglês</h3>
             <div class="image-reward-box">
-              <img class="scale-up-center" src="images/education.png" alt="Reward">
+              <img class="scale-up-center" src="images/education.png" alt="Curso">
             </div>
             <div class="pontos">
               <p>100 pontos</p>
@@ -27,10 +27,32 @@
           <div class="box">
             <h3>Café</h3>
             <div class="image-reward-box">
-              <img class="scale-up-center" src="images/coffee-cup.png" alt="Reward">
+              <img class="scale-up-center" src="images/coffee-cup.png" alt="Café">
             </div>
             <div class="pontos">
               <p>10 pontos</p>
+              <a class="resgatar" href="#">Resgatar</a>
+            </div>
+          </div>
+
+          <div class="box">
+            <h3>Massagem</h3>
+            <div class="image-reward-box">
+              <img class="scale-up-center" src="images/massage.svg" alt="Massagem">
+            </div>
+            <div class="pontos">
+              <p>50 pontos</p>
+              <a class="resgatar" href="#">Resgatar</a>
+            </div>
+          </div>
+
+          <div class="box">
+            <h3>Acessórios</h3>
+            <div class="image-reward-box">
+              <img class="scale-up-center" src="images/acessorio.svg" alt="Massagem">
+            </div>
+            <div class="pontos">
+              <p>150 pontos</p>
               <a class="resgatar" href="#">Resgatar</a>
             </div>
           </div>

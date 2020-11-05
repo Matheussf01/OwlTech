@@ -69,39 +69,41 @@ if (empty($_SESSION['id'])) {
             }
 
             echo ('
-                        <form action="alterarFoto.php" method="POST" class="image-perfil" enctype="multipart/form-data">
-                            <div class="nav-link img-perfil mr-3">
-                                <img src="' . $rstTemp['foto_perfil'] . '">
-                                
-                            </div>
-                            <div>
-                                <div class="button-wrapper">
-                                    <span class="label">
-                                        Escolha uma imagem
-                                    </span>
-                                    <input type="file" name="image" id="upload" class="upload-box" placeholder="Upload File">
-                                    <input class="alterar" type="submit" name="alterarFoto" class="btn" value="Alterar Foto">
-                                </div>
-                            </div>
-                        </form>
-                        <form action="#" method="POST">
-                            <div class="campo">
-                                <label class="col-form-label">Nome:</label>
-                                <input type="text" class="form-control" name="nome" id="recipient-name" value="' . $rstTemp['nome'] . '">
-                            </div>
-                            <div class="campo">
-                                <label class="col-form-label">Alterar Senha?</label>
-                                <input type="checkbox" name="alterasenha" value="true" id="myCheck" onclick="showCheckbox()">
-                                <input type="text" class="form-control" name="senha" id="input-check" style="display:none" placeholder="Digite a nova senha...">
+              <form action="alterarFoto.php" method="POST" class="image-perfil" enctype="multipart/form-data">
+                  <div class="nav-link img-perfil mr-3">
+                      <img src="' . $rstTemp['foto_perfil'] . '">
+                      
+                  </div>
+                  <div>
+                    <div class="alteracao-foto mt-2">
+                      <div class="button-wrapper-img">
+                        <span class="label">
+                            Escolha uma imagem
+                        </span>
+                        <input type="file" name="image" id="upload" class="upload-box" placeholder="Upload File">
+                      </div>
+                        <input class="alterar" type="submit" name="alterarFoto" class="btn" value="Alterar Foto">
+                      </div>
+                  </div>
+              </form>
+              <form action="#" method="POST">
+                  <div class="campo">
+                      <label class="col-form-label">Nome:</label>
+                      <input type="text" class="form-control" name="nome" id="recipient-name" value="' . $rstTemp['nome'] . '">
+                  </div>
+                  <div class="campo">
+                      <label class="col-form-label">Alterar Senha?</label>
+                      <input type="checkbox" name="alterasenha" value="true" id="myCheck" onclick="showCheckbox()">
+                      <input type="text" class="form-control" name="senha" id="input-check" style="display:none" placeholder="Digite a nova senha...">
 
-                            </div>
-                            <div class="campo">
-                                <label class="col-form-label">E-mail:</label>
-                                <input type="text" class="form-control" name="email" id="recipient-name" value="' . $rstTemp['email'] . '">
-                            </div>
-                            <div class="field question campo" value="">
-                                <p>Tem alguma Deficiência?</p>
-                                <select name="deficiencia" id="">');
+                  </div>
+                  <div class="campo">
+                      <label class="col-form-label">E-mail:</label>
+                      <input type="text" class="form-control" name="email" id="recipient-name" value="' . $rstTemp['email'] . '">
+                  </div>
+                  <div class="field question campo" value="">
+                      <p>Tem alguma Deficiência?</p>
+                      <select name="deficiencia" id="">');
 
             $selectDeficiencia = ('SELECT nome FROM deficiencia ORDER BY id_deficiencia ASC');
 
