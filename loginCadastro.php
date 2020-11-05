@@ -45,7 +45,7 @@ if(isset($_POST['login'])){
      $deficienciaTipo = $_POST['deficiencia'];
      $deficiencia=TRUE;
 
-    if($deficienciaTipo == "")
+    if($deficienciaTipo == "n")
     {
         $deficiencia = FALSE;
         $deficienciaTipo = NULL;
@@ -76,7 +76,7 @@ if(isset($_POST['login'])){
 
         $query = 'insert into usuarios (registro, senha, nome, deficiencia, deficiencia_tipo, email) VALUES ('.$id.',"'.$senha.'","'.$nome.'","'.$deficiencia.'","'.$deficienciaTipo.'","'.$email.'")';
         $insert = mysqli_query($conn, $query);
-       
+        echo $query;
         if($insert){
             
           

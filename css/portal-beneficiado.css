@@ -17,6 +17,12 @@ body {
     width: auto;
 }
 
+.itens-menu a {
+    padding: 10px;
+    text-decoration: none;
+    color: #383838;
+}
+
 .img-perfil {
     height: 60px;
     width: 60px;
@@ -124,7 +130,7 @@ body {
 .muck-up .bottom {
     min-height: 303px;
     z-index: 1;
-    padding: 35px;
+    padding: 15px;
     position: relative;
     color: #222;
     padding-top: 0px;
@@ -211,19 +217,7 @@ ul.tasks li.green:after {
     }
 }
 
-ul.tasks li.historico:after {
-    background: #383838;
-}
 
-ul.tasks::after {
-    content: '';
-    position: absolute;
-    height: 400px;
-    width: 1px;
-    background: #eee;
-    left: 20px;
-    top: -68px;
-}
 
 ul li.hang {
     margin-bottom: 48px;

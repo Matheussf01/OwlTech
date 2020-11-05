@@ -159,3 +159,7 @@ a img {
         opacity: 1;
     }
 }
+
+.historico p{
+    margin: 0!important;
+}
