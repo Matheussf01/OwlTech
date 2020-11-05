@@ -13,52 +13,31 @@
 
         <div class="box-rewards">
 
-          <div class="box">
-            <h3>Curso de Inglês</h3>
-            <div class="image-reward-box">
-              <img class="scale-up-center" src="images/education.png" alt="Curso">
-            </div>
-            <div class="pontos">
-              <p>100 pontos</p>
-              <a class="resgatar" href="#">Resgatar</a>
-            </div>
-          </div>
+        <?php
+         
 
-          <div class="box">
-            <h3>Café</h3>
-            <div class="image-reward-box">
-              <img class="scale-up-center" src="images/coffee-cup.png" alt="Café">
-            </div>
-            <div class="pontos">
-              <p>10 pontos</p>
-              <a class="resgatar" href="#">Resgatar</a>
-            </div>
-          </div>
+          $query = ('select * from recompensa where pontuacao <= (select pontuacao from usuarios where id_usuario='.$_SESSION['id'].')');
+          $result = mysqli_query($conn, $query) or die("erro ao selecionar");
+          if (mysqli_num_rows($result)>0){
+            while ($rstTemp = mysqli_fetch_array($result)) {
 
-          <div class="box">
-            <h3>Massagem</h3>
-            <div class="image-reward-box">
-              <img class="scale-up-center" src="images/massage.svg" alt="Massagem">
-            </div>
-            <div class="pontos">
-              <p>50 pontos</p>
-              <a class="resgatar" href="#">Resgatar</a>
-            </div>
-          </div>
-
-          <div class="box">
-            <h3>Acessórios</h3>
-            <div class="image-reward-box">
-              <img class="scale-up-center" src="images/acessorio.svg" alt="Massagem">
-            </div>
-            <div class="pontos">
-              <p>150 pontos</p>
-              <a class="resgatar" href="#">Resgatar</a>
-            </div>
-          </div>
-
+              echo'<div class="box">
+                    <h3>'.$rstTemp['nome'].'</h3>
+                      <div class="image-reward-box">
+                        <img class="scale-up-center" src="'.$rstTemp['imagem'].'">
+                      </div>
+                      <div class="pontos">
+                        <p>'.$rstTemp['pontuacao'].' pontos</p>
+                        <a class="resgatar" href="#">Resgatar</a>
+                      </div>
+                    </div>
+                  ';
+            }
+          }else{
+            echo'Utilize a nossa plataforma e acumule pontos!';
+          }
+        ?>
         </div>
-
       </div>
       <div class="modal-footer">
         <a href="#" class="btn btn-secondary" data-dismiss="modal">Fechar</a>

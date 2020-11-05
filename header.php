@@ -17,9 +17,11 @@ if (empty($_SESSION['id'])) {
       <div class="d-flex align-items-center">
 
 
-        <div class="itens-menu">
+        <div class="itens-menu d-flex">
+
           <a href="#" data-toggle="modal" data-target="#contribuicoesModal" onclick='abreContribuicoes()'> Histórico </a>
           <a href="#" data-toggle="modal" data-target="#recompensasModal"> Recompensas </a>
+          
 
         </div>
 
@@ -33,6 +35,17 @@ if (empty($_SESSION['id'])) {
 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-item exibPontuacao" >
+            <?php
+            
+            $query_select = ('select pontuacao from usuarios WHERE id_usuario =' . $_SESSION['id']);
+            $resultado = mysqli_query($conn, $query_select) or die("erro ao selecionar");
+          
+            while ($rstTemp = mysqli_fetch_array($resultado)) {
+                echo $rstTemp['pontuacao'].' pontos';
+            }
+          ?>
+            </div>
             <a class="dropdown-item" id="editPerfil" href="#" data-toggle="modal" data-target="#perfilModal">Perfil</a>
             <a class="dropdown-item" href="#" data-toggle="modal" data-target="#faleConoscoModal">Fale Conosco</a>
             <div class="dropdown-divider"></div>
@@ -59,7 +72,7 @@ if (empty($_SESSION['id'])) {
 
             <?php
 
-            $query_select = ('select  nome, deficiencia_tipo, email, deficiencia, foto_perfil from usuarios WHERE id_usuario =' . $_SESSION['id']);
+            $query_select = ('select * from usuarios WHERE id_usuario =' . $_SESSION['id']);
             $resultado = mysqli_query($conn, $query_select) or die("erro ao selecionar");
             $rstTemp = mysqli_fetch_array($resultado);
 
