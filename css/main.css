@@ -183,3 +183,14 @@ a img {
     transition: 0.25s ease-in-out;
     margin-right: 1rem;
 }
+
+.box-andamento-solicitacao {
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.titulo-historico {
+    font-size: 25px;
+    color: #000;
+    font-weight: 500;
+}

@@ -55,7 +55,7 @@ if (empty($_SESSION['id']) || $_SESSION['deficiencia'] == 1) {
             </div>
           </div>
 
-          <div class=" box-historico">
+          <div class="box-historico">
             <div class="muck-up">
               <div class="bottom">
                 <ul class="tasks-colaborador">
@@ -84,7 +84,7 @@ if (empty($_SESSION['id']) || $_SESSION['deficiencia'] == 1) {
                         <h4>Solicitação em Andamento</h4>
                         <hr>
                         <p><strong>Nome:</strong> <span>' . $rstTemp['nome'] . '</span></p>
-                        <p><strong>Localização:</strong> <span>' . $rstTemp['localizacao'] . '</span></p>';
+                        <p><strong>Localização atual:</strong> <span>' . $rstTemp['localizacao'] . '</span></p>';
                     if ($rstTemp['destino'] != "") {
                       echo ('  <p><strong>Destino:</strong> <span>' . $rstTemp['destino'] . '</span></p>');
                     }

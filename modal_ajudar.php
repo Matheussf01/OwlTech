@@ -9,14 +9,13 @@ if ($_POST["solicitacao"]) {
   $rstTemp = mysqli_fetch_array($sqlresult);
 
 
-        if($rstTemp['dt_agendamento'] == ""){
-            $dt_agendamento= "Não";
-        }else{
-         
-            $dt_agendamento= date_create($rstTemp['dt_agendamento']);
-            $dt_agendamento= "Sim, ". date_format($dt_agendamento, 'd/m/Y H:i:s');
+  if ($rstTemp['dt_agendamento'] == "") {
+    $dt_agendamento = "Não";
+  } else {
 
-        }
+    $dt_agendamento = date_create($rstTemp['dt_agendamento']);
+    $dt_agendamento = "Sim, " . date_format($dt_agendamento, 'd/m/Y H:i:s');
+  }
 
 
   echo (' <div class="col-12 d-flex">
@@ -27,7 +26,7 @@ if ($_POST["solicitacao"]) {
             </div>
             <div class="col-12 d-flex">
                 <p>
-                    <b>Localização:</b>
+                    <b>Localização atual:</b>
                 </p>
                 <p>&nbsp;' . $rstTemp['localizacao'] . '</p>
             </div>

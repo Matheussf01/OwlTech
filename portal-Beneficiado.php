@@ -50,8 +50,6 @@ if (empty($_SESSION['id']) || $_SESSION['deficiencia'] == 0) {
         </div>
         <div class="col-md-6 d-flex justify-content-center mt-5">
           <div class=" box-historico">
-            <h2 class="titulo-historico">Solicitações em Andamento</h2>
-            <hr>
             <div class="muck-up">
               <div class="bottom">
                 <ul class="tasks">
@@ -78,8 +76,10 @@ if (empty($_SESSION['id']) || $_SESSION['deficiencia'] == 0) {
 
                       echo '<li class="box-andamento-solicitacao">
                      
-                    
-                        <p><strong>Localização:</strong> <span>' . $rstTemp['localizacao'] . '</span></p>';
+                            <h4 class="titulo-historico">Solicitações em Andamento</h4>
+                            <hr>
+
+                        <p><strong>Localização atual:</strong> <span>' . $rstTemp['localizacao'] . '</span></p>';
                       if ($rstTemp['destino'] != "") {
                         echo ('  <p><strong>Destino:</strong> <span>' . $rstTemp['destino'] . '</span></p>');
                       }
@@ -99,7 +99,6 @@ if (empty($_SESSION['id']) || $_SESSION['deficiencia'] == 0) {
                                 <input class="btn-red" type="submit" class="btn" name="excluir" value="Excluir">
                             </form>    
                         </div>
-                        <hr>
                     </li> ';
                     }
                   }

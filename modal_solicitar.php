@@ -9,7 +9,7 @@
         <div class="modal-body">
           <form action="#" method="POST">
             <div class="form-group">
-              <label for="solicitarajuda-localizacao" class="col-form-label">Localização</label>
+              <label for="solicitarajuda-localizacao" class="col-form-label">Localização atual</label>
               <input type="text" class="form-control" name="localizacao" id="solicitarajuda-localizacao" required>
             </div>
             <div class="form-group">
@@ -27,7 +27,7 @@
                 <option value="Buscar objetos/documentos">Buscar objetos/documentos</option>
                 <option value="Auxilio com tarefas manuais">Auxilio com tarefas manuais</option>
 
-               
+
 
               </select>
             </div>
@@ -36,7 +36,7 @@
               <input type="text" class="form-control" name="destino" id="solicitarajuda-destino">
             </div>
             <div class="form-group">
-              <label for="solicitarajuda-descricao" class="col-form-label">Descrição:</label>
+              <label for="solicitarajuda-descricao" class="col-form-label">Descrição</label>
               <textarea class="form-control" name="descricao" id="solicitarajuda-descricao"></textarea>
             </div>
 
@@ -69,14 +69,14 @@
         $agendarhorarioExt = '"' . $arrayAgendamento[0] . ' ' . $arrayAgendamento[1] . ':00",';
 
 
-            $columAgendamento ="dt_agendamento,";
-        }
-        $destino = $_POST['destino'];
-        $descricao = $_POST['descricao'];
-        
-           
-          
-        $query = ('INSERT INTO solicitacao (id_beneficiado, '.$columAgendamento.' descricao, tarefa, localizacao, destino) values ('.$_SESSION['id'].','.  $agendarhorarioExt.' "'.$descricao.'", "'.$tarefa.'", "'.$localizacao.'", "'.$destino.'");');
+        $columAgendamento = "dt_agendamento,";
+      }
+      $destino = $_POST['destino'];
+      $descricao = $_POST['descricao'];
+
+
+
+      $query = ('INSERT INTO solicitacao (id_beneficiado, ' . $columAgendamento . ' descricao, tarefa, localizacao, destino) values (' . $_SESSION['id'] . ',' .  $agendarhorarioExt . ' "' . $descricao . '", "' . $tarefa . '", "' . $localizacao . '", "' . $destino . '");');
 
 
 
