@@ -110,3 +110,9 @@
     transform: scale(1.05);
     color: var(--light-red);
 }
+
+@media (max-width: 992px) {
+    .box-rewards {
+        grid-template-columns: 1fr;
+    }
+}
