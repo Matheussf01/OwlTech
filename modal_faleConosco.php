@@ -17,7 +17,7 @@
           <label for="message-text" class="col-form-label">Mensagem:</label>
           <textarea class="form-control" id="message-text"></textarea>
         </div>
-        <input class="salvar" type="submit" name="alterarDados" value="Enviar">
+        <input class="btn-red" type="submit" name="alterarDados" value="Enviar">
 
       </form>
     </div>

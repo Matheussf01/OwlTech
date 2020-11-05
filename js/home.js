@@ -49,7 +49,7 @@ function cadastrar() {
 }
 
 function media_query() {
-    login.style.height = "28rem";
+    login.style.height = "32rem";
     login.style.margin = "-8rem auto";
     btn_login.style.top = "5rem"
 }
@@ -70,6 +70,7 @@ function myFunction(x) {
         email.style.display = "none"
         nome.style.display = "none"
         question.style.display = "none"
+        voltar.style.display = "none"
+
     }
 }
-

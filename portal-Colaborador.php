@@ -59,54 +59,52 @@ if (empty($_SESSION['id']) || $_SESSION['deficiencia'] == 1) {
             <div class="muck-up">
               <div class="bottom">
                 <ul class="tasks-colaborador">
-					
-							
 
-									<?php
-                    $verificandoSolicitacoes = ('SELECT s.*, u.* FROM solicitacao s JOIN usuarios u ON u.id_usuario = s.id_beneficiado WHERE s.id_contribuinte = '.$_SESSION['id'].' AND s.dt_conclusao IS NULL ORDER BY s.id_solicitacao DESC;');
-                    
-                    $testa = mysqli_query($conn, $verificandoSolicitacoes) or die("erro ao selecionar");
-                    
-                    if (mysqli_num_rows($testa)>0){
-                      
-                        $rstTemp=mysqli_fetch_array($testa);
-                        
-                        
-                        if($rstTemp['dt_agendamento'] == ""){
-                            $dt_agendamento= "Não";
-                        }else{
-                          
-                            $dt_agendamento= date_create($rstTemp['dt_agendamento']);
-                            $dt_agendamento= "Sim, ". date_format($dt_agendamento, 'd/m/Y H:i:s');
-                
-                        }
 
-                        echo '<li class="box-andamento-solicitacao">
+
+                  <?php
+                  $verificandoSolicitacoes = ('SELECT s.*, u.* FROM solicitacao s JOIN usuarios u ON u.id_usuario = s.id_beneficiado WHERE s.id_contribuinte = ' . $_SESSION['id'] . ' AND s.dt_conclusao IS NULL ORDER BY s.id_solicitacao DESC;');
+
+                  $testa = mysqli_query($conn, $verificandoSolicitacoes) or die("erro ao selecionar");
+
+                  if (mysqli_num_rows($testa) > 0) {
+
+                    $rstTemp = mysqli_fetch_array($testa);
+
+
+                    if ($rstTemp['dt_agendamento'] == "") {
+                      $dt_agendamento = "Não";
+                    } else {
+
+                      $dt_agendamento = date_create($rstTemp['dt_agendamento']);
+                      $dt_agendamento = "Sim, " . date_format($dt_agendamento, 'd/m/Y H:i:s');
+                    }
+
+                    echo '<li class="box-andamento-solicitacao">
                         <h4>Solicitação em Andamento</h4>
                         <hr>
-                        <p><strong>Nome:</strong> <span>'.$rstTemp['nome'].'</span></p>
-                        <p><strong>Localização:</strong> <span>'.$rstTemp['localizacao'].'</span></p>';
-                        if($rstTemp['destino'] != ""){
-                            echo('  <p><strong>Destino:</strong> <span>'.$rstTemp['destino'].'</span></p>');
-                        }
-                        echo '<p><strong>Horário Agendado:</strong> <span>'.$dt_agendamento.'</span></p>
-                        <p><strong>Tarefa a ser realizada:</strong> <span>'.$rstTemp['tarefa'].'</span></p>
-                        <p><strong>Descrição:</strong> <span>'.$rstTemp['descricao'].'</span></p>
+                        <p><strong>Nome:</strong> <span>' . $rstTemp['nome'] . '</span></p>
+                        <p><strong>Localização:</strong> <span>' . $rstTemp['localizacao'] . '</span></p>';
+                    if ($rstTemp['destino'] != "") {
+                      echo ('  <p><strong>Destino:</strong> <span>' . $rstTemp['destino'] . '</span></p>');
+                    }
+                    echo '<p><strong>Horário Agendado:</strong> <span>' . $dt_agendamento . '</span></p>
+                        <p><strong>Tarefa a ser realizada:</strong> <span>' . $rstTemp['tarefa'] . '</span></p>
+                        <p><strong>Descrição:</strong> <span>' . $rstTemp['descricao'] . '</span></p>
 
                         <form action="concluirSolicitacao.php" method="POST">
-                            <input type="text" class="d-none" name="idsolicitacao" value="'.$rstTemp['id_solicitacao'].'">
-                            <input type="submit" name="concluiSolicitacao" value="Concluir">
+                            <input type="text" class="d-none" name="idsolicitacao" value="' . $rstTemp['id_solicitacao'] . '">
+                            <input class="btn-red" type="submit" name="concluiSolicitacao" value="Concluir">
                         </form>
-                    </li> ';  
+                    </li> ';
+                  } else {
 
-                  }else{
-                   
-                      $query_select = ('SELECT u.nome, u.foto_perfil, u.registro, s.id_solicitacao, s.tarefa, s.dt_solicitacao, s.id_contribuinte, s.dt_conclusao FROM solicitacao s JOIN usuarios u ON u.id_usuario = s.id_beneficiado WHERE s.id_contribuinte IS NULL AND s.dt_conclusao IS NULL ORDER BY s.id_solicitacao DESC;');
-                      
-                      $sqlresult = mysqli_query($conn, $query_select) or die("erro ao selecionar");
-                      if (mysqli_num_rows($sqlresult)>0){
-                        while ($rstTemp = mysqli_fetch_array($sqlresult)) {
-                            echo '
+                    $query_select = ('SELECT u.nome, u.foto_perfil, u.registro, s.id_solicitacao, s.tarefa, s.dt_solicitacao, s.id_contribuinte, s.dt_conclusao FROM solicitacao s JOIN usuarios u ON u.id_usuario = s.id_beneficiado WHERE s.id_contribuinte IS NULL AND s.dt_conclusao IS NULL ORDER BY s.id_solicitacao DESC;');
+
+                    $sqlresult = mysqli_query($conn, $query_select) or die("erro ao selecionar");
+                    if (mysqli_num_rows($sqlresult) > 0) {
+                      while ($rstTemp = mysqli_fetch_array($sqlresult)) {
+                        echo '
                                 <li class=" historico d-flex">
                                         <div class="img-perfil-tasks d-flex align-items-center justify-content-center">
                                             <img src="' . $rstTemp['foto_perfil'] . '">
@@ -125,23 +123,23 @@ if (empty($_SESSION['id']) || $_SESSION['deficiencia'] == 1) {
                                                 </div>
                                         </div>
                                 </li>';
-                        }
-                      }else{
-                        echo'Nenhuma solicitação aberta.';
                       }
+                    } else {
+                      echo 'Nenhuma solicitação aberta.';
                     }
-                    
-                    
-                    ?>
+                  }
+
+
+                  ?>
 
                 </ul>
-                   </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
+
+    </div>
     </div>
 
 
