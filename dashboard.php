@@ -126,7 +126,6 @@
       }
       loadBarChart();
 
-
       const ctx = document.getElementById('pie').getContext('2d');
       const pie = new Chart(ctx, {
         type: 'pie',
