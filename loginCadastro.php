@@ -43,13 +43,14 @@ if(isset($_POST['login'])){
      $nome = $_POST['nome'];
      $email = $_POST['email'];
      $deficienciaTipo = $_POST['deficiencia'];
-     $deficiencia=TRUE;
+     $deficiencia=1;
 
-    if($deficienciaTipo == "n")
-    {
-        $deficiencia = FALSE;
-        $deficienciaTipo = NULL;
-    }
+     if($deficienciaTipo == "n")
+     {
+         $deficiencia = 0;
+         $deficienciaTipo = NULL;
+        }
+
   
 
   if($id == "" || $id == null || $senha  == "" || $senha == null || $nome  == ""  || $nome == null || $email  == ""  || $email == null ){
@@ -76,7 +77,7 @@ if(isset($_POST['login'])){
 
         $query = 'insert into usuarios (registro, senha, nome, deficiencia, deficiencia_tipo, email) VALUES ('.$id.',"'.$senha.'","'.$nome.'","'.$deficiencia.'","'.$deficienciaTipo.'","'.$email.'")';
         $insert = mysqli_query($conn, $query);
-        echo $query;
+      
         if($insert){
             
           
@@ -87,7 +88,8 @@ if(isset($_POST['login'])){
 
         }else{
           echo"<script language='javascript' type='text/javascript'>
-          alert('Não foi possível cadastrar esse usuário');</script>";
+          alert('Não foi possível cadastrar esse usuário');window.location.
+          href='index.php'</script></script>";
           //window.location.href='index.php'
         }
       }
