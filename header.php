@@ -131,7 +131,7 @@ if (empty($_SESSION['id'])) {
         </div>
 
         <div class="modal-footer">
-          <a href="#" data-dismiss="modal">Fechar</a>
+          <a href="#" class="btn btn-secondary" data-dismiss="modal">Fechar</a>
         </div>
       </div>
     </div>

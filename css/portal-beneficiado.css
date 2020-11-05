@@ -90,36 +90,6 @@ body {
     transform: translateY(-1px);
 }
 
-.modal-footer a,
-.modal-footer input,
-.modal-footer button {
-    text-align: center;
-    box-shadow: 0px 10px 14px -7px #276873;
-    background: linear-gradient(to bottom, var(--light-red) 5%, var(--main-red) 100%);
-    background-color: #599bb3;
-    border-radius: 5rem;
-    display: inline-block;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: Arial;
-    font-size: 20px;
-    font-weight: bold;
-    padding: 0.3rem 2.5rem;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #3d768a;
-}
-
-.modal-footer a:hover,
-.modal-footer input:hover,
-.modal-footer button:hover {
-    background: linear-gradient(to bottom, var(--main-red) 5%, var(--light-red) 100%);
-    color: #fff;
-}
-
-.btn-fechar {
-    background: linear-gradient(to bottom, #b8b8b8 5%, #8a8a8a 100%) !important;
-}
-
 
 /* .form-group input {
     padding: 0.5rem;
@@ -261,10 +231,36 @@ ul li.hang {
 
 ul li.hang img {
     float: left;
-    height: 20ox;
     width: 20px;
     border-radius: 50%;
     margin-right: 8px;
+}
+
+.button-wrapper {
+    position: relative;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-wrapper span.label {
+    position: relative;
+    z-index: 0;
+    display: inline-block;
+    width: 100%;
+    background: linear-gradient(to bottom, var(--light-red) 5%, var(--main-red) 100%);
+    cursor: pointer;
+    border-radius: 5rem;
+    color: #fff;
+    padding: 10px 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.finalizar-solicitar {
+    color: #fff;
+    font-size: 15px;
 }
 
 @media (max-width: 1100px) {

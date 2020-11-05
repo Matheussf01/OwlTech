@@ -2,8 +2,6 @@
 session_start();
 include("connect.php");
 
-
-
 if (empty($_SESSION['id']) || $_SESSION['deficiencia'] == 0) {
   /*verifica se existem as informações*/
   session_destroy();
@@ -13,7 +11,6 @@ if (empty($_SESSION['id']) || $_SESSION['deficiencia'] == 0) {
   $uri = $_SERVER["REQUEST_URI"];
   $uriArray = explode("/", $uri);
   $_SESSION["paginaAtual"] = end($uriArray);
-
 
 ?>
   <!DOCTYPE html>
