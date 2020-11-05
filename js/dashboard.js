@@ -4,8 +4,8 @@ labels.push('Colaborador', 'Def. Visual', 'Def. Auditivo')
 
 
 function loadBarChart() {
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const myChart = new Chart(ctx, {
+    const ctx = document.getElementById('barChart').getContext('2d');
+    const barChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: labels,
@@ -44,8 +44,8 @@ function loadBarChart() {
 }
 loadBarChart();
 
-const ctx = document.getElementById('pie').getContext('2d');
-const pie = new Chart(ctx, {
+const ctx = document.getElementById('pieChart').getContext('2d');
+const pieChart = new Chart(ctx, {
     type: 'pie',
     data: {
         labels: labels,

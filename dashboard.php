@@ -39,17 +39,13 @@
 
     <div class="grafico">
       <div class="box scale-up-center">
-        <h2>Alguma Coisa Top</h2>
-      </div>
-
-      <div class="box scale-up-center">
         <h2>Usuários</h2>
-        <canvas id="pie" width="400" height="400"></canvas>
+        <canvas id="pieChart" width="400" height="400"></canvas>
       </div>
 
       <div class="box scale-up-center">
         <h2>Histórico de usabilidade</h2>
-        <canvas id="myChart" width="400" height="400"></canvas>
+        <canvas id="barChart" width="400" height="400"></canvas>
       </div>
 
       <div class="box scale-up-center">
@@ -78,6 +74,7 @@
     </div>
 
   </main>
+  <script src="js/dashboard.js"></script>
   <?php include('hand_talk.php'); ?>
 
 </body>
