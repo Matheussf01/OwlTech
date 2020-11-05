@@ -57,7 +57,8 @@ session_destroy();
         <?php
         $query_select = ('SELECT * FROM deficiencia ORDER BY id_deficiencia ASC');
         $sqlresult = mysqli_query($conn, $query_select) or die("erro ao selecionar");
-        echo '<select name="deficiencia" id="">';
+        echo '<select name="deficiencia" id="">
+                <option value="n">Não</option> ';
         while ($rstTemp = mysqli_fetch_array($sqlresult)) {
           echo '<option value="' . utf8_encode($rstTemp['nome']) . '">' . utf8_encode($rstTemp['nome']) . '</option>';
         }
