@@ -16,13 +16,13 @@ if (empty($_SESSION['id'])) {
       </a>
       <div class="d-flex align-items-center">
 
-        <?php if ($_SESSION['deficiencia'] == 0) { ?>
+        
           <div class="itens-menu">
-            <a href="#" data-toggle="modal" data-target="#contribuicoesModal" onclick='abreContribuicoes()'> Contribuições </a>
+            <a href="#" data-toggle="modal" data-target="#contribuicoesModal" onclick='abreContribuicoes()'> Histórico </a>
             <a href="#" data-toggle="modal" data-target="#recompensasModal"> Recompensas </a>
 
           </div>
-        <?php } ?>
+ 
 
 
         <div>

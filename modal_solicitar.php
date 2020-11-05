@@ -21,9 +21,13 @@
             <div class="form-group">
               <label for="solicitarajuda-tarefa" class="col-form-label">Tarefa a ser realizada:</label>
               <select name="tarefa" id="solicitarajuda-tarefa">
-                <option value="Locomoção">Locomoção</option>
-                <option value="Transporte de Objetos">Transporte de Objetos</option>
+                <option value="Deslocamento interno (empresa)">Deslocamento interno (empresa)</option>
+                <option value="Deslocamento externo (arredores)">Deslocamento externo (arredores)</option>
+                <option value="Deslocar equipamentos">Deslocar equipamentos</option>
+                <option value="Buscar objetos/documentos">Buscar objetos/documentos</option>
                 <option value="Auxilio com tarefas manuais">Auxilio com tarefas manuais</option>
+
+               
 
               </select>
             </div>
